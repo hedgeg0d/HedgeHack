@@ -36,9 +36,9 @@ import java.util.jar.Manifest;
 @Mod(modid = WurstplusThree.MODID, name = WurstplusThree.MODNAME, version = WurstplusThree.MODVER)
 public class WurstplusThree {
 
-    public static final String MODID = "wurstplusthree";
-    public static final String MODNAME = "Wurst+3";
-    public static final String MODVER = "0.7.0+" + BuildConfig.GitHash;
+    public static final String MODID = "hedgehack";
+    public static final String MODNAME = "HedgeHack";
+    public static final String MODVER = "0.0.1+" + BuildConfig.GitHash;
 
     public static final Logger LOGGER = LogManager.getLogger(MODID);
 
@@ -96,7 +96,7 @@ public class WurstplusThree {
     public void init(FMLInitializationEvent event) {
         this.load();
         LOGGER.info(MODNAME + " : " + MODVER + " has been loaded");
-        Display.setTitle("Wurst+3 | v" + MODVER);
+        Display.setTitle(MODNAME);
     }
 
     public void load() {

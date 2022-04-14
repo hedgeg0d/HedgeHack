@@ -34,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 import java.util.stream.IntStream;
 
-@Hack.Registration(name = "Crystal Aura", description = "the goods", category = Hack.Category.COMBAT, priority = HackPriority.Highest)
+@Hack.Registration(name = "Crystal Aura", description = "Crystalls go brrr", category = Hack.Category.COMBAT, priority = HackPriority.Highest)
 public final class CrystalAura extends Hack {
 
     public static CrystalAura INSTANCE;
@@ -45,11 +45,11 @@ public final class CrystalAura extends Hack {
 
     //ranges
     private final ParentSetting ranges = new ParentSetting("Ranges", this);
-    private final DoubleSetting breakRange = new DoubleSetting("Break Range", 5.0, 0.0, 6.0, ranges);
-    private final DoubleSetting placeRange = new DoubleSetting("Place Range", 5.0, 0.0, 6.0, ranges);
-    private final DoubleSetting breakRangeWall = new DoubleSetting("Break Range Wall", 3.0, 0.0, 6.0, ranges);
-    private final DoubleSetting placeRangeWall = new DoubleSetting("Place Range Wall", 3.0, 0.0, 6.0, ranges);
-    private final DoubleSetting targetRange = new DoubleSetting("Target Range", 15.0, 0.0, 20.0, ranges);
+    private final DoubleSetting breakRange = new DoubleSetting("Break Range", 5.0, 0.0, 10.0, ranges);
+    private final DoubleSetting placeRange = new DoubleSetting("Place Range", 5.0, 0.0, 10.0, ranges);
+    private final DoubleSetting breakRangeWall = new DoubleSetting("Break Range Wall", 3.0, 0.0, 10.0, ranges);
+    private final DoubleSetting placeRangeWall = new DoubleSetting("Place Range Wall", 3.0, 0.0, 10.0, ranges);
+    private final DoubleSetting targetRange = new DoubleSetting("Target Range", 15.0, 0.0, 30.0, ranges);
 
     //delay
     private final ParentSetting delays = new ParentSetting("Delays", this);
@@ -75,7 +75,7 @@ public final class CrystalAura extends Hack {
     public final EnumSetting autoSwitch = new EnumSetting("Switch", "None", Arrays.asList("Allways", "NoGap", "None", "Silent"), general);
     private final BooleanSetting silentSwitchHand = new BooleanSetting("Hand Activation", true, general, s -> autoSwitch.is("Silent"));
     private final BooleanSetting antiWeakness = new BooleanSetting("Anti Weakness", true, general);
-    private final IntSetting maxCrystals = new IntSetting("MaxCrystal", 1, 1, 4, general);
+    private final IntSetting maxCrystals = new IntSetting("MaxCrystal", 1, 1, 12, general);
     private final BooleanSetting ignoreTerrain = new BooleanSetting("Terrain Trace", true, general);
     private final EnumSetting crystalLogic = new EnumSetting("Placements", "Damage", Arrays.asList("Damage", "Nearby", "Safe"), general);
     private final BooleanSetting thirteen = new BooleanSetting("1.13", false, general);
@@ -117,7 +117,7 @@ public final class CrystalAura extends Hack {
     //render
     private final ParentSetting render = new ParentSetting("Render", this);
     private final EnumSetting when = new EnumSetting("When", "Place", Arrays.asList("Place", "Break", "Both", "Never"), render);
-    private final EnumSetting mode = new EnumSetting("Mode", "Pretty", Arrays.asList("Pretty", "Solid", "Outline"), render);
+    private final EnumSetting mode = new EnumSetting("Mode", "Pretty", Arrays.asList("Pretty", "Solid", "Outline", "None"), render);
     private final BooleanSetting fade = new BooleanSetting("Fade", false, render);
     private final IntSetting fadeTime = new IntSetting("FadeTime", 200, 0, 1000, render, v -> fade.getValue());
     private final BooleanSetting flat = new BooleanSetting("Flat", false, render);
@@ -821,6 +821,10 @@ public final class CrystalAura extends Hack {
                 break;
             case "Outline":
                 outline = true;
+                solid = false;
+                break;
+            case "None":
+                outline = false;
                 solid = false;
                 break;
         }

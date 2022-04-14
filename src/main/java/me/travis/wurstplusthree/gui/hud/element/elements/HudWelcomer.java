@@ -5,10 +5,7 @@ import me.travis.wurstplusthree.gui.hud.element.HudElement;
 import me.travis.wurstplusthree.hack.hacks.client.HudEditor;
 import me.travis.wurstplusthree.util.HudUtil;
 
-/**
- * @author Madmegsox1
- * @since 22/06/2021
- */
+
 
 @HudElement.Element(name = "Welcomer", posX = 100, posY = 100)
 public class HudWelcomer extends HudElement {

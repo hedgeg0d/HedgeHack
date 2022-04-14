@@ -15,10 +15,7 @@ import org.lwjgl.input.Mouse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * @author Madmegsox1
- * @since 17/06/2021
- */
+
 
 public class WurstplusHudGui extends GuiScreen {
 

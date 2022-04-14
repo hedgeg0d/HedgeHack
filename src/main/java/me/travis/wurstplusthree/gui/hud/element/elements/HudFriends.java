@@ -39,8 +39,8 @@ public class HudFriends extends HudElement {
         int y = getY();
 
         if (friends.isEmpty()) {
-            HudUtil.drawHudString(ChatFormatting.BOLD + "U got no friends", getX(), y, HudEditor.INSTANCE.fontColor.getValue().hashCode());
-            biggest = WurstplusThree.GUI_FONT_MANAGER.getTextWidth("U got no friends");
+            HudUtil.drawHudString(ChatFormatting.BOLD + "I got no friends", getX(), y, HudEditor.INSTANCE.fontColor.getValue().hashCode());
+            biggest = WurstplusThree.GUI_FONT_MANAGER.getTextWidth("I got no friends");
         } else {
             HudUtil.drawHudString(ChatFormatting.BOLD + "the_fellas", getX(), y, HudEditor.INSTANCE.fontColor.getValue().hashCode());
             y += 12;

@@ -16,7 +16,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.Arrays;
 
-@Hack.Registration(name = "Jesus", description = "its jebus, say hello jebus SHGDFYGSDKJHFGSDHJ", category = Hack.Category.PLAYER, isListening = false)
+@Hack.Registration(name = "jesus", description = "Cosplaying Jesus", category = Hack.Category.PLAYER, isListening = false)
 public class Jesus extends Hack {
 
     public static Jesus INSTANCE;

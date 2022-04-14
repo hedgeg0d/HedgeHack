@@ -74,7 +74,7 @@ public class ColorComponent extends Component {
             int length = WurstplusThree.GUI_FONT_MANAGER.getTextWidth(text);
             int height = WurstplusThree.GUI_FONT_MANAGER.getTextHeight();
             RenderUtil2D.drawRectMC(mouseX+1, mouseY+4, mouseX + length + 5, mouseY + height + 8, Gui.INSTANCE.toolTipColor.getValue().hashCode());
-            WurstplusThree.GUI_FONT_MANAGER.drawStringWithShadow(text, mouseX + 3, mouseY + 8, new Color(255,255,255).hashCode());
+            WurstplusThree.GUI_FONT_MANAGER.drawStringWithShadow(text, mouseX + 3, mouseY + 8, new Color(200,255,120).hashCode());
         }
     }
 

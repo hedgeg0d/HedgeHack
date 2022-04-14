@@ -23,10 +23,7 @@ import javax.annotation.Nullable;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * @author Madmegsox1
- * @since 27/04/2021
- */
+
 @SideOnly(Side.CLIENT)
 public class GuiChat extends GuiNewChat implements Globals {
     private static final Logger LOGGER = WurstplusThree.LOGGER;

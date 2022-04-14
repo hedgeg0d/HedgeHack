@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-@Hack.Registration(name = "Auto Ez", description = "lets people know ur clouted", category = Hack.Category.CHAT, priority = HackPriority.Lowest)
+@Hack.Registration(name = "Auto EZ", description = "it does exactly what you think", category = Hack.Category.CHAT, priority = HackPriority.Lowest)
 public class AutoEz extends Hack {
     public static AutoEz INSTANCE;
     public AutoEz() {
@@ -41,7 +41,8 @@ public class AutoEz extends Hack {
     public void announceDeath() {
         if (this.delayCount < 150 || !this.isEnabled()) return;
         delayCount = 0;
-        mc.player.connection.sendPacket(new CPacketChatMessage("you just got nae nae'd by wurst+3" + (discord.getValue() ? " | discord.gg/wurst" : "")));
+        mc.player.connection.sendPacket(new CPacketChatMessage("you just got fucked by HedgeHack" + (discord.getValue() ? "" : "")));
+        mc.player.connection.sendPacket(new CPacketChatMessage("HedgeHack ON TOP!!1!" + (discord.getValue() ? "" : "")));
     }
 
 }

@@ -35,7 +35,7 @@ public class ConfigManager implements Globals {
 
 
     // FOLDERS
-    private final String mainFolder = "Wurstplus3/";
+    private final String mainFolder = "HedgeHack/";
     private final String configsFolder = mainFolder + "configs/";
     private String activeConfigFolder = configsFolder + "default/";
     public final String pluginFolder = mainFolder + "plugins/";

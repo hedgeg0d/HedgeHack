@@ -56,7 +56,7 @@ public class CustomSplashScreen extends GuiScreen {
     private void initDonators() {
         this.donatorItems.clear();
         try {
-            URL capesList = new URL("https://raw.githubusercontent.com/TrvsF/capes/main/boosts.txt");
+            URL capesList = new URL("");
             BufferedReader in = new BufferedReader(new InputStreamReader(capesList.openStream()));
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
@@ -79,12 +79,12 @@ public class CustomSplashScreen extends GuiScreen {
         this.x = this.width / 4;
         this.y = this.height / 4 + 48;
         this.watermarkX = this.width + 80;
-        this.buttonList.add(new TextButton(0, this.x, this.y + 22, "singleplayer"));
-        this.buttonList.add(new TextButton(1, this.x, this.y + 44, "the_fellas"));
-        this.buttonList.add(new TextButton(2, this.x, this.y + 66, "settings"));
-        this.buttonList.add(new TextButton(2, this.x, this.y + 88, "discord"));
-        this.buttonList.add(new TextButton(2, this.x, this.y + 110, "alts"));
-        this.buttonList.add(new TextButton(2, this.x, this.y + 132, "log"));
+        this.buttonList.add(new TextButton(0, this.x, this.y + 22, "fuck the society"));
+        this.buttonList.add(new TextButton(1, this.x, this.y + 44, "pornhub.com"));
+        this.buttonList.add(new TextButton(2, this.x, this.y + 66, "configuration"));
+        //this.buttonList.add(new TextButton(2, this.x, this.y + 88, "discord"));
+        this.buttonList.add(new TextButton(2, this.x, this.y + 88, "alts"));
+        this.buttonList.add(new TextButton(2, this.x, this.y + 110, "suicide"));
         GlStateManager.disableTexture2D();
         GlStateManager.enableBlend();
         GlStateManager.disableAlpha();
@@ -106,7 +106,7 @@ public class CustomSplashScreen extends GuiScreen {
             this.mc.displayGuiScreen(new GuiMultiplayer(this));
         } else if (CustomSplashScreen.isHovered(this.x, this.y + 66, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("settings"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
             this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
-        } else if (CustomSplashScreen.isHovered(this.x, this.y + 88, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("discord"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
+        } else if (CustomSplashScreen.isHovered(this.x, this.y + 900, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("discord"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
             try {
                 if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
                     Desktop.getDesktop().browse(new URI("https://discord.gg/hvnZePKQHx"));
@@ -114,10 +114,10 @@ public class CustomSplashScreen extends GuiScreen {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } else if (CustomSplashScreen.isHovered(this.x, this.y + 110, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("alts"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
+        } else if (CustomSplashScreen.isHovered(this.x, this.y + 88, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("alts"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
             this.mc.displayGuiScreen(new GuiAccountSelector());
         }
-        else if (CustomSplashScreen.isHovered(this.x, this.y + 132, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("log"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
+        else if (CustomSplashScreen.isHovered(this.x, this.y + 110, WurstplusThree.MENU_FONT_MANAGER.getTextWidth("cum"), WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), mouseX, mouseY)) {
             this.mc.shutdown();
         }
     }
@@ -131,7 +131,7 @@ public class CustomSplashScreen extends GuiScreen {
         GlStateManager.disableBlend();
         this.mc.getTextureManager().bindTexture(this.background);
         CustomSplashScreen.drawCompleteImage(-16.0f + xOffset, -9.0f + yOffset, this.width + 32, this.height + 18);
-        String watermark = WurstplusThree.MODNAME + " v" + WurstplusThree.INSTANCE.MODVER+ " : made by travis#0001 | Madmeg#4882 - with help from BrownZombie, k3b, wallhacks#6969, and Austin :D";
+        String watermark = WurstplusThree.MODNAME + " v" + WurstplusThree.INSTANCE.MODVER+ " : made by Hedgegod :D";
         for (DonatorItem item : this.donatorItems) {
             item.updatePos();
             switch (item.getSize()) {
@@ -152,7 +152,7 @@ public class CustomSplashScreen extends GuiScreen {
         if (watermarkX < -WurstplusThree.GUI_FONT_MANAGER.getTextWidth(watermark) - 10) {
             this.watermarkX = this.width + 40;
         }
-        WurstplusThree.MENU_FONT_MANAGER.drawStringBig("WurstPlus 3", (float) this.x, (float) this.y - 20, Color.white.getRGB(), true);
+        WurstplusThree.MENU_FONT_MANAGER.drawStringBig("HedgeHack", (float) this.x, (float) this.y - 20, Color.orange.getRGB(), true);
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
@@ -166,9 +166,9 @@ public class CustomSplashScreen extends GuiScreen {
             if (this.visible) {
                 this.enabled = true;
                 this.hovered = (float) mouseX >= (float) this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
-                WurstplusThree.MENU_FONT_MANAGER.drawStringWithShadow(this.displayString, (float) this.x + 1f, this.y, Color.WHITE.getRGB());
+                WurstplusThree.MENU_FONT_MANAGER.drawStringWithShadow(this.displayString, (float) this.x + 1f, this.y, Color.orange.getRGB());
                 if (this.hovered) {
-                    RenderUtil.drawLine(this.x - 5f, this.y + 2 + WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), this.x - 5f, this.y - 2, 2f, Rainbow.getColour().getRGB());
+                    RenderUtil.drawLine(this.x - 5f, this.y + 2 + WurstplusThree.MENU_FONT_MANAGER.getTextHeight(), this.x - 5f, this.y - 2, 2f, Color.white.getRGB());
                 }
             }
         }

@@ -1,0 +1,1155 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f4dcdece27f, pid=25757, tid=0x00007f4dcc1fc640
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_321-b07) (build 1.8.0_321-b07)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.321-b07 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x3d127f]  CardTableExtension::scavenge_contents_parallel(ObjectStartArray*, MutableSpace*, HeapWord*, PSPromotionManager*, unsigned int, unsigned int)+0x20f
+#
+# Core dump written. Default location: /home/hedgegod/1Earth/HedgeHack ALPHA/core or core.25757
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f4dc8025800):  GCTaskThread [stack: 0x00007f4dcc0fd000,0x00007f4dcc1fd000] [id=25765]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000008
+
+Registers:
+RAX=0x00007f4dceaa5f20, RBX=0x0000000003964d00, RCX=0x0000000000000003, RDX=0x0000000000000001
+RSP=0x00007f4dcc1fbc20, RBP=0x00007f4dcc1fbcd0, RSI=0x000000072c99fc00, RDI=0x0000000000000000
+R8 =0x00007f4dcca64b81, R9 =0x00007f4dcca64d80, R10=0x00007f4dccace917, R11=0x0000000000000100
+R12=0x000000072c9a0000, R13=0x00007f4dcca64d80, R14=0x00007f4dc80185a0, R15=0x000000072c9a0000
+RIP=0x00007f4dcdece27f, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f4dcc1fbc20)
+0x00007f4dcc1fbc20:   00007f4dc80759a0 00007f4dcca64b80
+0x00007f4dcc1fbc30:   00007f4dcc900100 0000000000000100
+0x00007f4dcc1fbc40:   00007f4dcc900000 00007f4dc8076380
+0x00007f4dcc1fbc50:   000000072c970038 0000000739d22e00
+0x00007f4dcc1fbc60:   000000072c9b0000 00007f4dcca64d00
+0x00007f4dcc1fbc70:   0000000000000200 00007f4dcca64d00
+0x00007f4dcc1fbc80:   00007f4dccace917 00007f4dcca64c00
+0x00007f4dcc1fbc90:   00007f4dc80185a0 00007f4dc8018350
+0x00007f4dcc1fbca0:   00007f4dc801f9a0 00007f4dc8027ab0
+0x00007f4dcc1fbcb0:   00007f4dc8076380 00007f4dc8025800
+0x00007f4dcc1fbcc0:   0000000000000000 00007f4dceaca608
+0x00007f4dcc1fbcd0:   00007f4dcc1fbd00 00007f4dce491e89
+0x00007f4dcc1fbce0:   0000000000000004 00007f4dce491e51
+0x00007f4dcc1fbcf0:   0000000000000001 00007f4dc8027ab0
+0x00007f4dcc1fbd00:   00007f4dcc1fbe10 00007f4dce0c36d6
+0x00007f4dcc1fbd10:   00000000000003d8 00007f4dc8025a40
+0x00007f4dcc1fbd20:   00007f4dc8025e68 00007f4dc8025a90
+0x00007f4dcc1fbd30:   00007f4dcc1fbda0 00007f4dc8025a80
+0x00007f4dcc1fbd40:   00007f4dcc1fbd58 00007f4dce67430e
+0x00007f4dcc1fbd50:   0000000000000000 0000000000000000
+0x00007f4dcc1fbd60:   00007f4dc8025800 00007f4dc8025e70
+0x00007f4dcc1fbd70:   00007f4dc8025eb0 00007f4dc8025ec0
+0x00007f4dcc1fbd80:   00007f4dc8025f98 00000000000000d8
+0x00007f4dcc1fbd90:   00007f4dc80260d0 0000000000000001
+0x00007f4dcc1fbda0:   00007f4dc8025800 00007f4dc8025e70
+0x00007f4dcc1fbdb0:   00007f4dc8025eb0 00007f4dc8025ec0
+0x00007f4dcc1fbdc0:   00007f4dc8025f98 00000000000000d8
+0x00007f4dcc1fbdd0:   00007f4dcc1fbd60 00007f4d003d1bce
+0x00007f4dcc1fbde0:   00007f4dcc1fbe10 00007f4dc8026a40
+0x00007f4dcc1fbdf0:   00007f4dc8026950 00007f4dc8025800
+0x00007f4dcc1fbe00:   00007f4dceb85840 0000000000000000
+0x00007f4dcc1fbe10:   00007f4dcc1fbe50 00007f4dce4141b2 
+
+Instructions: (pc=0x00007f4dcdece27f)
+0x00007f4dcdece25f:   05 16 c6 bf 00 0f b6 10 84 d2 74 cd 48 8d 05 ae
+0x00007f4dcdece26f:   7c bd 00 41 8b 7f 08 8b 48 08 48 d3 e7 48 03 38
+0x00007f4dcdece27f:   8b 47 08 83 f8 00 7f bd 0f 84 fb 00 00 00 80 fa
+0x00007f4dcdece28f:   01 48 8d 0d 95 fa bb 00 48 19 d2 83 e2 04 49 63 
+
+Register to memory mapping:
+
+RAX=0x00007f4dceaa5f20: <offset 0xfa8f20> in /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/server/libjvm.so at 0x00007f4dcdafd000
+RBX=0x0000000003964d00 is an unknown value
+RCX=0x0000000000000003 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x00007f4dcc1fbc20 is an unknown value
+RBP=0x00007f4dcc1fbcd0 is an unknown value
+RSI=0x000000072c99fc00 is pointing into object: 0x000000072c99fbf8
+com.sun.tools.javac.util.UnsharedNameTable$NameImpl 
+ - klass: 'com/sun/tools/javac/util/UnsharedNameTable$NameImpl'
+RDI=0x0000000000000000 is an unknown value
+R8 =0x00007f4dcca64b81 is an unknown value
+R9 =0x00007f4dcca64d80 is an unknown value
+R10=0x00007f4dccace917 is an unknown value
+R11=0x0000000000000100 is an unknown value
+R12=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x00007f4dcc0fd000,0x00007f4dcc1fd000],  sp=0x00007f4dcc1fbc20,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x3d127f]  CardTableExtension::scavenge_contents_parallel(ObjectStartArray*, MutableSpace*, HeapWord*, PSPromotionManager*, unsigned int, unsigned int)+0x20f
+V  [libjvm.so+0x994e89]  OldToYoungRootsTask::do_it(GCTaskManager*, unsigned int)+0x49
+V  [libjvm.so+0x5c66d6]  GCTaskThread::run()+0x1b6
+V  [libjvm.so+0x9171b2]  java_start(Thread*)+0x102
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f4d7cbab800 JavaThread "Cache worker for Build Output Cleanup Cache (/home/hedgegod/1Earth/HedgeHack ALPHA/.gradle/buildOutputCleanup)" [_thread_blocked, id=34400, stack(0x00007f4d2286c000,0x00007f4d2296c000)]
+  0x00007f4d7c9e2000 JavaThread "Cache worker for task history cache (/home/hedgegod/1Earth/HedgeHack ALPHA/.gradle/4.10.3/taskHistory)" [_thread_blocked, id=34399, stack(0x00007f4d21f6c000,0x00007f4d2206c000)]
+  0x00007f4d2c153800 JavaThread "Task worker for ':' Thread 3" [_thread_blocked, id=34398, stack(0x00007f4d68bff000,0x00007f4d68cff000)]
+  0x00007f4d2c003000 JavaThread "Task worker for ':' Thread 2" [_thread_blocked, id=34397, stack(0x00007f4d2266c000,0x00007f4d2276c000)]
+  0x00007f4d2c4e4800 JavaThread "Task worker for ':'" [_thread_blocked, id=34396, stack(0x00007f4d22a6c000,0x00007f4d22b6c000)]
+  0x00007f4d7000a000 JavaThread "Exec process Thread 3" [_thread_blocked, id=34393, stack(0x00007f4d2276c000,0x00007f4d2286c000)]
+  0x00007f4d70009000 JavaThread "Exec process Thread 2" [_thread_blocked, id=34392, stack(0x00007f4d205fa000,0x00007f4d206fa000)]
+  0x00007f4d70008800 JavaThread "process reaper" daemon [_thread_blocked, id=34391, stack(0x00007f4d2306c000,0x00007f4d230a5000)]
+  0x00007f4d2c07a000 JavaThread "Exec process" [_thread_blocked, id=34389, stack(0x00007f4d230a5000,0x00007f4d231a5000)]
+  0x00007f4d2c04b000 JavaThread "Build operations Thread 4" [_thread_blocked, id=34383, stack(0x00007f4d688ff000,0x00007f4d689ff000)]
+  0x00007f4d2c048800 JavaThread "Build operations Thread 3" [_thread_blocked, id=34382, stack(0x00007f4d2236c000,0x00007f4d2246c000)]
+  0x00007f4d2c152800 JavaThread "Build operations Thread 2" [_thread_blocked, id=34381, stack(0x00007f4d689ff000,0x00007f4d68aff000)]
+  0x00007f4d2c04a000 JavaThread "Build operations" [_thread_blocked, id=34380, stack(0x00007f4d8007b000,0x00007f4d8017b000)]
+  0x00007f4d2c28b000 JavaThread "Cache worker for cache directory md-rule (/home/hedgegod/.gradle/caches/4.10.3/md-rule)" [_thread_blocked, id=34379, stack(0x00007f4d2206c000,0x00007f4d2216c000)]
+  0x00007f4d2c151800 JavaThread "Cache worker for cache directory md-supplier (/home/hedgegod/.gradle/caches/4.10.3/md-supplier)" [_thread_blocked, id=34378, stack(0x00007f4d81631000,0x00007f4d81731000)]
+  0x00007f4d2c127000 JavaThread "Cache worker for file hash cache (/home/hedgegod/1Earth/HedgeHack ALPHA/.gradle/4.10.3/fileHashes)" [_thread_blocked, id=34377, stack(0x00007f4d81931000,0x00007f4d81a31000)]
+  0x00007f4d2c09f800 JavaThread "Stdin handler" [_thread_blocked, id=34376, stack(0x00007f4d204fa000,0x00007f4d205fa000)]
+  0x00007f4d2c272800 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /0:0:0:0:0:0:0:1:44633 to /0:0:0:0:0:0:0:1:60540" [_thread_blocked, id=34375, stack(0x00007f4d68aff000,0x00007f4d68bff000)]
+  0x00007f4d5065b000 JavaThread "Daemon worker Thread 11" [_thread_blocked, id=34372, stack(0x00007f4d80e31000,0x00007f4d80f31000)]
+  0x00007f4d50658800 JavaThread "Cancel handler" [_thread_blocked, id=34371, stack(0x00007f4d81a31000,0x00007f4d81b31000)]
+  0x00007f4d5000d000 JavaThread "Handler for socket connection from /0:0:0:0:0:0:0:1:44633 to /0:0:0:0:0:0:0:1:60540" [_thread_in_native, id=34370, stack(0x00007f4d81831000,0x00007f4d81931000)]
+  0x00007f4d5c39f000 JavaThread "Daemon Thread 11" [_thread_blocked, id=34369, stack(0x00007f4d81731000,0x00007f4d81831000)]
+  0x00007f4d5c39c800 JavaThread "Cache worker for Java compile cache (/home/hedgegod/.gradle/caches/4.10.3/javaCompile)" [_thread_blocked, id=25938, stack(0x00007f4d21d6c000,0x00007f4d21e6c000)]
+  0x00007f4d50ded800 JavaThread "Cache worker for file content cache (/home/hedgegod/.gradle/caches/4.10.3/fileContent)" [_thread_blocked, id=25931, stack(0x00007f4d22b6c000,0x00007f4d22c6c000)]
+  0x00007f4d50a86000 JavaThread "Memory manager" [_thread_blocked, id=25930, stack(0x00007f4d2296c000,0x00007f4d22a6c000)]
+  0x00007f4d5137e000 JavaThread "Cache worker for Artifact transforms cache (/home/hedgegod/.gradle/caches/transforms-1)" [_thread_blocked, id=25792, stack(0x00007f4d68eff000,0x00007f4d68fff000)]
+  0x00007f4d5042f800 JavaThread "Cache worker for journal cache (/home/hedgegod/.gradle/caches/journal-1)" [_thread_blocked, id=25789, stack(0x00007f4d80d31000,0x00007f4d80e31000)]
+  0x00007f4d5029f000 JavaThread "File lock request listener" [_thread_in_native, id=25787, stack(0x00007f4d81131000,0x00007f4d81231000)]
+  0x00007f4d50298800 JavaThread "Cache worker for file hash cache (/home/hedgegod/.gradle/caches/4.10.3/fileHashes)" [_thread_blocked, id=25786, stack(0x00007f4d81231000,0x00007f4d81331000)]
+  0x00007f4dc90f5000 JavaThread "Daemon periodic checks" [_thread_blocked, id=25777, stack(0x00007f4d81b31000,0x00007f4d81c31000)]
+  0x00007f4dc90d1000 JavaThread "Incoming local TCP Connector on port 44633" [_thread_in_native, id=25776, stack(0x00007f4d81c38000,0x00007f4d81d38000)]
+  0x00007f4dc9063000 JavaThread "Daemon health stats" [_thread_blocked, id=25775, stack(0x00007f4d81f4a000,0x00007f4d8204a000)]
+  0x00007f4dc80cb800 JavaThread "Service Thread" daemon [_thread_blocked, id=25773, stack(0x00007f4da47ab000,0x00007f4da48ab000)]
+  0x00007f4dc80c0800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=25772, stack(0x00007f4da48ac000,0x00007f4da49ac000)]
+  0x00007f4dc80be800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=25771, stack(0x00007f4da49ad000,0x00007f4da4aad000)]
+  0x00007f4dc80bb800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=25770, stack(0x00007f4da4aae000,0x00007f4da4bae000)]
+  0x00007f4dc80ba800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=25769, stack(0x00007f4da4bae000,0x00007f4da4cae000)]
+  0x00007f4dc8087000 JavaThread "Finalizer" daemon [_thread_blocked, id=25768, stack(0x00007f4da4cae000,0x00007f4da4dae000)]
+  0x00007f4dc8082800 JavaThread "Reference Handler" daemon [_thread_blocked, id=25767, stack(0x00007f4da4dae000,0x00007f4da4eae000)]
+  0x00007f4dc8009800 JavaThread "main" [_thread_blocked, id=25758, stack(0x00007f4dcd921000,0x00007f4dcda21000)]
+
+Other Threads:
+  0x00007f4dc8079000 VMThread [stack: 0x00007f4da4eaf000,0x00007f4da4faf000] [id=25766]
+  0x00007f4dc80d0800 WatcherThread [stack: 0x00007f4da46ab000,0x00007f4da47ab000] [id=25774]
+
+=>0x00007f4dc8025800 (exited) GCTaskThread [stack: 0x00007f4dcc0fd000,0x00007f4dcc1fd000] [id=25765]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f4dc8007a50] Threads_lock - owner thread: 0x00007f4dc8079000
+[0x00007f4dc8007f50] Heap_lock - owner thread: 0x00007f4d2c153800
+
+heap address: 0x0000000700000000, size: 3072 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 931840K, used 835415K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 100% used [0x0000000780000000,0x00000007b1c00000,0x00000007b1c00000)
+  from space 116736K, 17% used [0x00000007b1c00000,0x00000007b2fd5d90,0x00000007b8e00000)
+  to   space 112128K, 0% used [0x00000007b9280000,0x00000007b9280000,0x00000007c0000000)
+ ParOldGen       total 1175040K, used 947339K [0x0000000700000000, 0x0000000747b80000, 0x0000000780000000)
+  object space 1175040K, 80% used [0x0000000700000000,0x0000000739d22e00,0x0000000747b80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+
+Card table byte_map: [0x00007f4dcc900000,0x00007f4dccf01000] byte_map_base: 0x00007f4dc9100000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f4dcead9220
+ Begin Bits: [0x00007f4da6000000, 0x00007f4da9000000)
+ End Bits:   [0x00007f4da9000000, 0x00007f4dac000000)
+
+Polling page: 0x00007f4dcef75000
+
+CodeCache: size=245760Kb used=81121Kb max_used=81134Kb free=164638Kb
+ bounds [0x00007f4db9000000, 0x00007f4dbdfd0000, 0x00007f4dc8000000]
+ total_blobs=22109 nmethods=21250 adapters=770
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 8990.640 Thread 0x00007f4dc80c0800 nmethod 29392 0x00007f4dbdfb9110 code [0x00007f4dbdfb92c0, 0x00007f4dbdfb96c8]
+Event: 8990.643 Thread 0x00007f4dc80bb800 nmethod 29395 0x00007f4dbdf86d90 code [0x00007f4dbdf86f00, 0x00007f4dbdf87138]
+Event: 8990.645 Thread 0x00007f4dc80c0800 29393   !   3       org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingConfigurationResolver::resolveGraph (83 bytes)
+Event: 8990.647 Thread 0x00007f4dc80c0800 nmethod 29393 0x00007f4dbdfba150 code [0x00007f4dbdfba440, 0x00007f4dbdfbba58]
+Event: 8990.655 Thread 0x00007f4dc80c0800 29394       3       org.gradle.api.internal.artifacts.ivyservice.ShortCircuitEmptyConfigurationResolver::resolveGraph (36 bytes)
+Event: 8990.656 Thread 0x00007f4dc80c0800 nmethod 29394 0x00007f4dbdfb99d0 code [0x00007f4dbdfb9b80, 0x00007f4dbdfb9fd8]
+Event: 8990.656 Thread 0x00007f4dc80c0800 29396       3       org.gradle.api.internal.artifacts.ivyservice.ShortCircuitEmptyConfigurationResolver::resolveArtifacts (46 bytes)
+Event: 8990.657 Thread 0x00007f4dc80c0800 nmethod 29396 0x00007f4dbdfbc710 code [0x00007f4dbdfbc8e0, 0x00007f4dbdfbcfa8]
+Event: 8990.854 Thread 0x00007f4dc80be800 29397       4       sun.security.util.DisabledAlgorithmConstraints::permits (33 bytes)
+Event: 8990.865 Thread 0x00007f4dc80be800 nmethod 29397 0x00007f4dbdfc0710 code [0x00007f4dbdfc08e0, 0x00007f4dbdfc1098]
+
+GC Heap History (10 events):
+Event: 8837.304 GC heap after
+Heap after GC invocations=205 (full 11):
+ PSYoungGen      total 931328K, used 35388K [0x0000000780000000, 0x00000007bf600000, 0x00000007c0000000)
+  eden space 825344K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b2600000)
+  from space 105984K, 33% used [0x00000007b8b00000,0x00000007bad8f030,0x00000007bf280000)
+  to   space 103424K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b8b00000)
+ ParOldGen       total 947712K, used 853541K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x0000000734189580,0x0000000739d80000)
+ Metaspace       used 92096K, capacity 97484K, committed 97664K, reserved 1134592K
+  class space    used 11741K, capacity 12837K, committed 12928K, reserved 1048576K
+}
+Event: 8837.958 GC heap before
+{Heap before GC invocations=206 (full 11):
+ PSYoungGen      total 931328K, used 860732K [0x0000000780000000, 0x00000007bf600000, 0x00000007c0000000)
+  eden space 825344K, 100% used [0x0000000780000000,0x00000007b2600000,0x00000007b2600000)
+  from space 105984K, 33% used [0x00000007b8b00000,0x00000007bad8f030,0x00000007bf280000)
+  to   space 103424K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b8b00000)
+ ParOldGen       total 947712K, used 853541K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x0000000734189580,0x0000000739d80000)
+ Metaspace       used 92096K, capacity 97484K, committed 97664K, reserved 1134592K
+  class space    used 11741K, capacity 12837K, committed 12928K, reserved 1048576K
+Event: 8838.025 GC heap after
+Heap after GC invocations=206 (full 11):
+ PSYoungGen      total 928768K, used 19367K [0x0000000780000000, 0x00000007bee80000, 0x00000007c0000000)
+  eden space 825344K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b2600000)
+  from space 103424K, 18% used [0x00000007b2600000,0x00000007b38e9e78,0x00000007b8b00000)
+  to   space 95744K, 0% used [0x00000007b9100000,0x00000007b9100000,0x00000007bee80000)
+ ParOldGen       total 947712K, used 853541K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x0000000734189580,0x0000000739d80000)
+ Metaspace       used 92096K, capacity 97484K, committed 97664K, reserved 1134592K
+  class space    used 11741K, capacity 12837K, committed 12928K, reserved 1048576K
+}
+Event: 8848.223 GC heap before
+{Heap before GC invocations=207 (full 11):
+ PSYoungGen      total 928768K, used 844711K [0x0000000780000000, 0x00000007bee80000, 0x00000007c0000000)
+  eden space 825344K, 100% used [0x0000000780000000,0x00000007b2600000,0x00000007b2600000)
+  from space 103424K, 18% used [0x00000007b2600000,0x00000007b38e9e78,0x00000007b8b00000)
+  to   space 95744K, 0% used [0x00000007b9100000,0x00000007b9100000,0x00000007bee80000)
+ ParOldGen       total 947712K, used 853541K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x0000000734189580,0x0000000739d80000)
+ Metaspace       used 93218K, capacity 98596K, committed 98816K, reserved 1134592K
+  class space    used 11872K, capacity 12973K, committed 13056K, reserved 1048576K
+Event: 8848.461 GC heap after
+Heap after GC invocations=207 (full 11):
+ PSYoungGen      total 910848K, used 95726K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b1c00000)
+  from space 95744K, 99% used [0x00000007b9100000,0x00000007bee7bab0,0x00000007bee80000)
+  to   space 116736K, 0% used [0x00000007b1c00000,0x00000007b1c00000,0x00000007b8e00000)
+ ParOldGen       total 947712K, used 857211K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x000000073451edc8,0x0000000739d80000)
+ Metaspace       used 93218K, capacity 98596K, committed 98816K, reserved 1134592K
+  class space    used 11872K, capacity 12973K, committed 13056K, reserved 1048576K
+}
+Event: 8993.146 GC heap before
+{Heap before GC invocations=208 (full 11):
+ PSYoungGen      total 910848K, used 910830K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 100% used [0x0000000780000000,0x00000007b1c00000,0x00000007b1c00000)
+  from space 95744K, 99% used [0x00000007b9100000,0x00000007bee7bab0,0x00000007bee80000)
+  to   space 116736K, 0% used [0x00000007b1c00000,0x00000007b1c00000,0x00000007b8e00000)
+ ParOldGen       total 947712K, used 857211K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 90% used [0x0000000700000000,0x000000073451edc8,0x0000000739d80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+Event: 8994.484 GC heap after
+Heap after GC invocations=208 (full 11):
+ PSYoungGen      total 931840K, used 40312K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b1c00000)
+  from space 116736K, 34% used [0x00000007b1c00000,0x00000007b435e2d0,0x00000007b8e00000)
+  to   space 112128K, 0% used [0x00000007b9280000,0x00000007b9280000,0x00000007c0000000)
+ ParOldGen       total 947712K, used 939923K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 99% used [0x0000000700000000,0x00000007395e4e28,0x0000000739d80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+}
+Event: 8994.484 GC heap before
+{Heap before GC invocations=209 (full 12):
+ PSYoungGen      total 931840K, used 40312K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b1c00000)
+  from space 116736K, 34% used [0x00000007b1c00000,0x00000007b435e2d0,0x00000007b8e00000)
+  to   space 112128K, 0% used [0x00000007b9280000,0x00000007b9280000,0x00000007c0000000)
+ ParOldGen       total 947712K, used 939923K [0x0000000700000000, 0x0000000739d80000, 0x0000000780000000)
+  object space 947712K, 99% used [0x0000000700000000,0x00000007395e4e28,0x0000000739d80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+Event: 9006.900 GC heap after
+Heap after GC invocations=209 (full 12):
+ PSYoungGen      total 931840K, used 20311K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 0% used [0x0000000780000000,0x0000000780000000,0x00000007b1c00000)
+  from space 116736K, 17% used [0x00000007b1c00000,0x00000007b2fd5d90,0x00000007b8e00000)
+  to   space 112128K, 0% used [0x00000007b9280000,0x00000007b9280000,0x00000007c0000000)
+ ParOldGen       total 1175040K, used 947339K [0x0000000700000000, 0x0000000747b80000, 0x0000000780000000)
+  object space 1175040K, 80% used [0x0000000700000000,0x0000000739d22e00,0x0000000747b80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+}
+Event: 9011.500 GC heap before
+{Heap before GC invocations=210 (full 12):
+ PSYoungGen      total 931840K, used 835415K [0x0000000780000000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 815104K, 100% used [0x0000000780000000,0x00000007b1c00000,0x00000007b1c00000)
+  from space 116736K, 17% used [0x00000007b1c00000,0x00000007b2fd5d90,0x00000007b8e00000)
+  to   space 112128K, 0% used [0x00000007b9280000,0x00000007b9280000,0x00000007c0000000)
+ ParOldGen       total 1175040K, used 947339K [0x0000000700000000, 0x0000000747b80000, 0x0000000780000000)
+  object space 1175040K, 80% used [0x0000000700000000,0x0000000739d22e00,0x0000000747b80000)
+ Metaspace       used 93772K, capacity 99152K, committed 99456K, reserved 1136640K
+  class space    used 11947K, capacity 13071K, committed 13184K, reserved 1048576K
+
+Deoptimization events (10 events):
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbdee84f4 method=org.spongepowered.tools.obfuscation.mirror.TypeHandle.compareElement(Ljavax/lang/model/element/Element;Ljava/lang/String;Ljava/lang/String;Z)Z @ 1
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbb0b9a2c method=org.spongepowered.tools.obfuscation.mirror.TypeUtils.getJavaSignature(Ljavax/lang/model/element/Element;)Ljava/lang/String; @ 1
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbdee84f4 method=org.spongepowered.tools.obfuscation.mirror.TypeHandle.compareElement(Ljavax/lang/model/element/Element;Ljava/lang/String;Ljava/lang/String;Z)Z @ 1
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbb0b9a2c method=org.spongepowered.tools.obfuscation.mirror.TypeUtils.getJavaSignature(Ljavax/lang/model/element/Element;)Ljava/lang/String; @ 1
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbdee84f4 method=org.spongepowered.tools.obfuscation.mirror.TypeHandle.compareElement(Ljavax/lang/model/element/Element;Ljava/lang/String;Ljava/lang/String;Z)Z @ 1
+Event: 8848.596 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbb0b9a2c method=org.spongepowered.tools.obfuscation.mirror.TypeUtils.getJavaSignature(Ljavax/lang/model/element/Element;)Ljava/lang/String; @ 1
+Event: 8848.597 Thread 0x00007f4d4c24f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4dbb239818 method=com.google.common.base.Strings.nullToEmpty(Ljava/lang/String;)Ljava/lang/String; @ 1
+Event: 8848.597 Thread 0x00007f4d4c24f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f4dba43f3a4 method=com.google.common.base.Strings.nullToEmpty(Ljava/lang/String;)Ljava/lang/String; @ 1
+Event: 8849.146 Thread 0x00007f4d4c24f800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f4dbd451db8 method=com.sun.tools.javac.jvm.ClassWriter.needsLocalVariableTypeEntry(Lcom/sun/tools/javac/code/Type;)Z @ 20
+Event: 8849.597 Thread 0x00007f4d4c24f800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f4dbc326c50 method=com.sun.tools.javac.comp.Resolve.accessInternal(Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/code/Symb
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 8961.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x000000079872e950) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8966.562 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007987580c0) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8971.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x0000000798762218) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8976.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x000000079878c1b8) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8981.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007987b5948) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8986.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007987bfa40) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8991.561 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007987c9b80) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 9006.942 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x0000000780004880) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 9006.951 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007804d5e68) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 9006.954 Thread 0x00007f4d50a86000 Exception <a 'java/io/IOException'> (0x00000007804ef658) thrown at [/scratch/jenkins/workspace/8-2-build-linux-amd64/jdk8u321/2141/hotspot/src/share/vm/prims/jni.cpp, line 710]
+
+Events (10 events):
+Event: 9006.975 Thread 0x00007f4d2c124000 Thread exited: 0x00007f4d2c124000
+Event: 9006.975 Executing VM operation: RevokeBias
+Event: 9006.975 Executing VM operation: RevokeBias done
+Event: 9006.976 Executing VM operation: RevokeBias
+Event: 9006.976 Executing VM operation: RevokeBias done
+Event: 9006.976 Executing VM operation: RevokeBias
+Event: 9006.976 Executing VM operation: RevokeBias done
+Event: 9006.976 Executing VM operation: RevokeBias
+Event: 9006.977 Executing VM operation: RevokeBias done
+Event: 9011.498 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+700000000-747b80000 rw-p 00000000 00:00 0 
+747b80000-780000000 ---p 00000000 00:00 0 
+780000000-7c0000000 rw-p 00000000 00:00 0 
+7c0000000-7c0ce0000 rw-p 00000000 00:00 0 
+7c0ce0000-800000000 ---p 00000000 00:00 0 
+55b11e600000-55b11e601000 r-xp 00000000 00:21 5342773                    /usr/java/jdk1.8.0_321-amd64/bin/java
+55b11e800000-55b11e801000 r--p 00000000 00:21 5342773                    /usr/java/jdk1.8.0_321-amd64/bin/java
+55b11e801000-55b11e802000 rw-p 00001000 00:21 5342773                    /usr/java/jdk1.8.0_321-amd64/bin/java
+55b11f875000-55b11ffed000 rw-p 00000000 00:00 0                          [heap]
+7f4d1ebfa000-7f4d1ec3a000 rw-p 00000000 00:00 0 
+7f4d1ec3a000-7f4d1edfa000 ---p 00000000 00:00 0 
+7f4d1edfa000-7f4d1effa000 rw-p 00000000 00:00 0 
+7f4d1f1fa000-7f4d1f5fa000 rw-p 00000000 00:00 0 
+7f4d1f5fa000-7f4d1f7fa000 rw-p 00000000 00:00 0 
+7f4d1fa34000-7f4d1fc34000 rw-p 00000000 00:00 0 
+7f4d1fc34000-7f4d1fe34000 rw-p 00000000 00:00 0 
+7f4d1fe34000-7f4d20034000 rw-p 00000000 00:00 0 
+7f4d20034000-7f4d20234000 rw-p 00000000 00:00 0 
+7f4d202fa000-7f4d204fa000 rw-p 00000000 00:00 0 
+7f4d204fa000-7f4d204fd000 ---p 00000000 00:00 0 
+7f4d204fd000-7f4d205fa000 rw-p 00000000 00:00 0 
+7f4d205fa000-7f4d205fd000 ---p 00000000 00:00 0 
+7f4d205fd000-7f4d208fa000 rw-p 00000000 00:00 0 
+7f4d208fa000-7f4d20afa000 rw-p 00000000 00:00 0 
+7f4d20b36000-7f4d20d36000 rw-p 00000000 00:00 0 
+7f4d20d36000-7f4d20f36000 rw-p 00000000 00:00 0 
+7f4d20f52000-7f4d20f55000 ---p 00000000 00:00 0 
+7f4d20f55000-7f4d21252000 rw-p 00000000 00:00 0 
+7f4d21252000-7f4d21262000 r--s 000e9000 00:21 1998672                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.7.11-SNAPSHOT/7a670207bdb97db418118ad1e9bb42424ff3776d/mixin-0.7.11-SNAPSHOT.jar
+7f4d2126c000-7f4d2146c000 rw-p 00000000 00:00 0 
+7f4d2146c000-7f4d2166c000 rw-p 00000000 00:00 0 
+7f4d2166c000-7f4d2186c000 rw-p 00000000 00:00 0 
+7f4d2186c000-7f4d21a6c000 rw-p 00000000 00:00 0 
+7f4d21a6c000-7f4d21c6c000 rw-p 00000000 00:00 0 
+7f4d21c6c000-7f4d21c6f000 ---p 00000000 00:00 0 
+7f4d21c6f000-7f4d21d6c000 rw-p 00000000 00:00 0 
+7f4d21d6c000-7f4d21d6f000 ---p 00000000 00:00 0 
+7f4d21d6f000-7f4d21e6c000 rw-p 00000000 00:00 0 
+7f4d21e6c000-7f4d21e6f000 ---p 00000000 00:00 0 
+7f4d21e6f000-7f4d21f6c000 rw-p 00000000 00:00 0 
+7f4d21f6c000-7f4d21f6f000 ---p 00000000 00:00 0 
+7f4d21f6f000-7f4d2206c000 rw-p 00000000 00:00 0 
+7f4d2206c000-7f4d2206f000 ---p 00000000 00:00 0 
+7f4d2206f000-7f4d2216c000 rw-p 00000000 00:00 0 
+7f4d2216c000-7f4d2216f000 ---p 00000000 00:00 0 
+7f4d2216f000-7f4d2226c000 rw-p 00000000 00:00 0 
+7f4d2226c000-7f4d2226f000 ---p 00000000 00:00 0 
+7f4d2226f000-7f4d2236c000 rw-p 00000000 00:00 0 
+7f4d2236c000-7f4d2236f000 ---p 00000000 00:00 0 
+7f4d2236f000-7f4d2266c000 rw-p 00000000 00:00 0 
+7f4d2266c000-7f4d2266f000 ---p 00000000 00:00 0 
+7f4d2266f000-7f4d2276c000 rw-p 00000000 00:00 0 
+7f4d2276c000-7f4d2276f000 ---p 00000000 00:00 0 
+7f4d2276f000-7f4d2286c000 rw-p 00000000 00:00 0 
+7f4d2286c000-7f4d2286f000 ---p 00000000 00:00 0 
+7f4d2286f000-7f4d2296c000 rw-p 00000000 00:00 0 
+7f4d2296c000-7f4d2296f000 ---p 00000000 00:00 0 
+7f4d2296f000-7f4d22a6c000 rw-p 00000000 00:00 0 
+7f4d22a6c000-7f4d22a6f000 ---p 00000000 00:00 0 
+7f4d22a6f000-7f4d22b6c000 rw-p 00000000 00:00 0 
+7f4d22b6c000-7f4d22b6f000 ---p 00000000 00:00 0 
+7f4d22b6f000-7f4d22e6c000 rw-p 00000000 00:00 0 
+7f4d22e6c000-7f4d22e6f000 ---p 00000000 00:00 0 
+7f4d22e6f000-7f4d22f6c000 rw-p 00000000 00:00 0 
+7f4d22f6c000-7f4d22f6f000 ---p 00000000 00:00 0 
+7f4d22f6f000-7f4d2306c000 rw-p 00000000 00:00 0 
+7f4d2306c000-7f4d2306f000 ---p 00000000 00:00 0 
+7f4d2306f000-7f4d230a5000 rw-p 00000000 00:00 0 
+7f4d230a5000-7f4d230a8000 ---p 00000000 00:00 0 
+7f4d230a8000-7f4d233a5000 rw-p 00000000 00:00 0 
+7f4d233a5000-7f4d235a5000 rw-p 00000000 00:00 0 
+7f4d235a5000-7f4d237a5000 rw-p 00000000 00:00 0 
+7f4d237a5000-7f4d239a5000 rw-p 00000000 00:00 0 
+7f4d239a5000-7f4d23ba5000 rw-p 00000000 00:00 0 
+7f4d23ba5000-7f4d23e00000 r--s 023fc000 00:21 1984676                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.72/fb72232c8fa977d5e07d33c43381ddbdc5edab6/kotlin-compiler-embeddable-1.3.72.jar
+7f4d23e00000-7f4d24000000 rw-p 00000000 00:00 0 
+7f4d24000000-7f4d24435000 rw-p 00000000 00:00 0 
+7f4d24435000-7f4d28000000 ---p 00000000 00:00 0 
+7f4d28000000-7f4d28447000 rw-p 00000000 00:00 0 
+7f4d28447000-7f4d2c000000 ---p 00000000 00:00 0 
+7f4d2c000000-7f4d2cab5000 rw-p 00000000 00:00 0 
+7f4d2cab5000-7f4d30000000 ---p 00000000 00:00 0 
+7f4d30000000-7f4d3042c000 rw-p 00000000 00:00 0 
+7f4d3042c000-7f4d34000000 ---p 00000000 00:00 0 
+7f4d34000000-7f4d3487b000 rw-p 00000000 00:00 0 
+7f4d3487b000-7f4d38000000 ---p 00000000 00:00 0 
+7f4d38000000-7f4d38838000 rw-p 00000000 00:00 0 
+7f4d38838000-7f4d3c000000 ---p 00000000 00:00 0 
+7f4d3c000000-7f4d3cce9000 rw-p 00000000 00:00 0 
+7f4d3cce9000-7f4d40000000 ---p 00000000 00:00 0 
+7f4d40000000-7f4d4041c000 rw-p 00000000 00:00 0 
+7f4d4041c000-7f4d44000000 ---p 00000000 00:00 0 
+7f4d44000000-7f4d44a8e000 rw-p 00000000 00:00 0 
+7f4d44a8e000-7f4d48000000 ---p 00000000 00:00 0 
+7f4d48000000-7f4d4881c000 rw-p 00000000 00:00 0 
+7f4d4881c000-7f4d4c000000 ---p 00000000 00:00 0 
+7f4d4c000000-7f4d4c757000 rw-p 00000000 00:00 0 
+7f4d4c757000-7f4d50000000 ---p 00000000 00:00 0 
+7f4d50000000-7f4d51d25000 rw-p 00000000 00:00 0 
+7f4d51d25000-7f4d54000000 ---p 00000000 00:00 0 
+7f4d54000000-7f4d5480c000 rw-p 00000000 00:00 0 
+7f4d5480c000-7f4d58000000 ---p 00000000 00:00 0 
+7f4d58000000-7f4d5a7f4000 rw-p 00000000 00:00 0 
+7f4d5a7f4000-7f4d5c000000 ---p 00000000 00:00 0 
+7f4d5c000000-7f4d5d8e5000 rw-p 00000000 00:00 0 
+7f4d5d8e5000-7f4d60000000 ---p 00000000 00:00 0 
+7f4d60000000-7f4d60829000 rw-p 00000000 00:00 0 
+7f4d60829000-7f4d64000000 ---p 00000000 00:00 0 
+7f4d64000000-7f4d666cb000 rw-p 00000000 00:00 0 
+7f4d666cb000-7f4d68000000 ---p 00000000 00:00 0 
+7f4d68011000-7f4d68017000 r--s 002f8000 00:21 5343967                    /usr/java/jdk1.8.0_321-amd64/jre/lib/charsets.jar
+7f4d68017000-7f4d68019000 r--s 00003000 00:21 1984668                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar
+7f4d68019000-7f4d68021000 r--s 00024000 00:21 1984665                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.72/6ca8bee3d88957eaaaef077c41c908c9940492d8/kotlin-stdlib-common-1.3.72.jar
+7f4d68021000-7f4d68032000 r--s 00100000 00:21 1984671                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.2.1/3839faf625f4197acaeceeb6da000f011a2acb49/kotlinx-coroutines-core-1.2.1.jar
+7f4d68032000-7f4d68039000 r--s 0005d000 00:21 1984659                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.3.72/755d6b7b0532b3225a08c67e1af60fea55cbe98b/kotlin-build-common-1.3.72.jar
+7f4d68039000-7f4d68044000 r--s 00081000 00:21 1984656                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/216c2e14b070f334479d800987affe4054cd563f/trove4j-1.0.20181211.jar
+7f4d68044000-7f4d6805b000 r--s 00108000 00:21 1984662                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/1.3.72/53bbaa2816dbf6bdb85f629451b1fcc88f2164d2/kotlin-daemon-embeddable-1.3.72.jar
+7f4d6805b000-7f4d6805d000 r--s 00009000 00:21 1984653                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.72/657d8d34d91e1964b4439378c09933e840bfe8d5/kotlin-script-runtime-1.3.72.jar
+7f4d6805d000-7f4d68063000 r--s 00033000 00:21 1981987                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar
+7f4d68063000-7f4d68065000 r--s 0000e000 00:21 1981984                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar
+7f4d68065000-7f4d6806b000 r--s 0003f000 00:21 1981981                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/31fbbff1ddbf98f3aa7377c94d33b0447c646b6e/httpcore-4.3.2.jar
+7f4d6806b000-7f4d68073000 r--s 00051000 00:21 1981978                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/trove/trove/1.0.2/112b40581ab9a4d3de4636d49985a7f686d181c8/trove-1.0.2.jar
+7f4d68073000-7f4d68076000 r--s 00018000 00:21 1984650                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/1.4/a8762d07e76cfde2395257a5da47ba7c1dbd3dce/commons-io-1.4.jar
+7f4d68076000-7f4d68077000 r--s 00001000 00:21 1981975                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jvnet.localizer/localizer/1.12/6d456886a035b2c3f758059da1f91a823eaa4a62/localizer-1.12.jar
+7f4d68077000-7f4d6809a000 r--s 0014d000 00:21 1984647                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/de.undercouch/gradle-download-task/4.0.2/2aaf2b081cd0dd5b3cf25fde69a20b043dd46fbd/gradle-download-task-4.0.2.jar
+7f4d6809a000-7f4d680ae000 r--s 0013d000 00:21 1984644                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.72/8032138f12c0180bc4e51fe139d4c52b46db6109/kotlin-stdlib-1.3.72.jar
+7f4d680ae000-7f4d680b0000 r--s 0000b000 00:21 1984641                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-util-io/1.3.72/de15a69a986dfbf45c9496bd7591e672e01748be/kotlin-util-io-1.3.72.jar
+7f4d680b0000-7f4d680b5000 r--s 00026000 00:21 1984638                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/1.3.72/e09990437040879d692655d66f58a64318681ffe/kotlin-scripting-common-1.3.72.jar
+7f4d680b5000-7f4d680b9000 r--s 00027000 00:21 1984635                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/1.3.72/7dde2c909e6f1b80245c7ca100d32a8646b5666d/kotlin-scripting-jvm-1.3.72.jar
+7f4d680b9000-7f4d680bf000 r--s 0002c000 00:21 1984632                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-util-klib/1.3.72/767e7ff25683eff91125203eedff4ec9e4c01bc8/kotlin-util-klib-1.3.72.jar
+7f4d680bf000-7f4d680c2000 r--s 00010000 00:21 1984629                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.3.72/1a7ea2c49ce11fb4600dcc7371a0ac8cc9291a2b/kotlin-native-utils-1.3.72.jar
+7f4d680c2000-7f4d680c3000 r--s 00002000 00:21 1984620                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.3.72/a36215ad6c453674632d69e81acb68e2bfb66766/kotlin-gradle-plugin-model-1.3.72.jar
+7f4d680c3000-7f4d680c6000 r--s 00011000 00:21 1984617                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.3.72/493310ffbc1c20f00c75769c58feeec16c02935c/kotlin-gradle-plugin-api-1.3.72.jar
+7f4d680c6000-7f4d68100000 r--s 00284000 00:21 1984626                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.72/86613e1a669a701b0c660bfd2af4f82a7ae11fca/kotlin-reflect-1.3.72.jar
+7f4d68100000-7f4d6810c000 r--s 0009a000 00:21 1984614                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.3.72/de1add228a520128cc3cae460a3f34cd42903914/kotlin-daemon-client-1.3.72.jar
+7f4d6810c000-7f4d68112000 r--s 00045000 00:21 1984623                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-impl-embeddable/1.3.72/fe188748283b313eb2ef17029bcdc4b861dfb53d/kotlin-scripting-compiler-impl-embeddable-1.3.72.jar
+7f4d68112000-7f4d6811a000 r--s 0004b000 00:21 1984611                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.72/f8fb26323755b46c221da2b37a65da20381bc896/kotlin-scripting-compiler-embeddable-1.3.72.jar
+7f4d6811a000-7f4d6811c000 r--s 00004000 00:21 1984605                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.3.72/cc769124a6a971552be155acbf07951cbd13f7ea/kotlin-compiler-runner-1.3.72.jar
+7f4d6811c000-7f4d68123000 r--s 0004f000 00:21 1984608                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.72/ecbb105a12a9766d2188f454b3bc3aab46cb80b6/kotlin-android-extensions-1.3.72.jar
+7f4d68123000-7f4d6812b000 r--s 00065000 00:21 1984602                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.72/cdd741e56c5e9e750ef481daf2d52384961cbc72/kotlin-annotation-processing-gradle-1.3.72.jar
+7f4d6812b000-7f4d68130000 r--s 00058000 00:21 1981939                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.3/f9e364ae2a66ce2a543012a4668856e84e5dab74/asm-debug-all-5.0.3.jar
+7f4d68130000-7f4d6813b000 r--s 00085000 00:21 1981936                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.3/18f4247ff4572a074444572cee34647c43e7c9c7/httpclient-4.3.3.jar
+7f4d6813b000-7f4d68145000 r--s 000a6000 00:21 1981935                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/net.minecraftforge/forgeflower/1.0.342-SNAPSHOT/83b7d227aa011da5f140558240149ed26a0f5d76/forgeflower-1.0.342-SNAPSHOT.jar
+7f4d68145000-7f4d68170000 r--s 001fc000 00:21 1981998                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar
+7f4d68170000-7f4d681b2000 r--s 00339000 00:21 1984593                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.3.72/bbb8daa76a0c56eef3ec6395a06fd9c38ca80154/kotlin-gradle-plugin-1.3.72.jar
+7f4d681b2000-7f4d681e5000 r--s 00306000 00:21 1984590                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.github.jengelman.gradle.plugins/shadow/2.0.4/30c957bc8507c15a3b6e48a47c6a44bda676c9b5/shadow-2.0.4.jar
+7f4d681e5000-7f4d683e5000 rw-p 00000000 00:00 0 
+7f4d683e5000-7f4d6841d000 r-xp 00000000 00:21 5342960                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libsunec.so
+7f4d6841d000-7f4d6861c000 ---p 00038000 00:21 5342960                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libsunec.so
+7f4d6861c000-7f4d68621000 r--p 00037000 00:21 5342960                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libsunec.so
+7f4d68621000-7f4d68623000 rw-p 0003c000 00:21 5342960                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libsunec.so
+7f4d68623000-7f4d68625000 r--s 00008000 00:21 1981932                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.3/e02368d7b56c0c376f227378a4f77de62864d020/httpmime-4.3.3.jar
+7f4d68625000-7f4d68627000 r--s 00001000 00:21 1981927                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.github.tony19/named-regexp/0.2.3/370846bf3837952d981deb8f91e81da8c65b09e1/named-regexp-0.2.3.jar
+7f4d68627000-7f4d6862c000 r--s 00036000 00:21 1984596                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar
+7f4d6862c000-7f4d6862e000 r--s 00008000 00:21 1981923                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.nothome/javaxdelta/2.0.1/d4f5d077f1b15c6f67595015d69572303ad3f66d/javaxdelta-2.0.1.jar
+7f4d6862e000-7f4d6863d000 r--s 000ba000 00:21 1981915                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/2.1.0/c82f2749a460b95de4c9d2466b62f18c23c7c914/trove4j-2.1.0.jar
+7f4d6863d000-7f4d686ff000 r--s 00d14000 00:21 1981897                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/net.minecraftforge.gradle/ForgeGradle/2.3-SNAPSHOT/d26d73dd46e54d4f633edb17ab8c1efd90c7604e/ForgeGradle-2.3-SNAPSHOT.jar
+7f4d686ff000-7f4d688ff000 rw-p 00000000 00:00 0 
+7f4d688ff000-7f4d68902000 ---p 00000000 00:00 0 
+7f4d68902000-7f4d689ff000 rw-p 00000000 00:00 0 
+7f4d689ff000-7f4d68a02000 ---p 00000000 00:00 0 
+7f4d68a02000-7f4d68aff000 rw-p 00000000 00:00 0 
+7f4d68aff000-7f4d68b02000 ---p 00000000 00:00 0 
+7f4d68b02000-7f4d68bff000 rw-p 00000000 00:00 0 
+7f4d68bff000-7f4d68c02000 ---p 00000000 00:00 0 
+7f4d68c02000-7f4d68eff000 rw-p 00000000 00:00 0 
+7f4d68eff000-7f4d68f02000 ---p 00000000 00:00 0 
+7f4d68f02000-7f4d6c000000 rw-p 00000000 00:00 0 
+7f4d6c000000-7f4d6ca59000 rw-p 00000000 00:00 0 
+7f4d6ca59000-7f4d70000000 ---p 00000000 00:00 0 
+7f4d70000000-7f4d7082c000 rw-p 00000000 00:00 0 
+7f4d7082c000-7f4d74000000 ---p 00000000 00:00 0 
+7f4d74000000-7f4d76354000 rw-p 00000000 00:00 0 
+7f4d76354000-7f4d78000000 ---p 00000000 00:00 0 
+7f4d78000000-7f4d796b0000 rw-p 00000000 00:00 0 
+7f4d796b0000-7f4d7c000000 ---p 00000000 00:00 0 
+7f4d7c000000-7f4d7e415000 rw-p 00000000 00:00 0 
+7f4d7e415000-7f4d80000000 ---p 00000000 00:00 0 
+7f4d80000000-7f4d80003000 r--p 00000000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80003000-7f4d80019000 r-xp 00003000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80019000-7f4d80020000 r--p 00019000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80020000-7f4d80021000 ---p 00020000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80021000-7f4d80022000 r--p 00020000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80022000-7f4d80023000 rw-p 00021000 00:21 24671951                   /usr/lib64/libnss_resolve.so.2
+7f4d80023000-7f4d80027000 r--p 00000000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80027000-7f4d80030000 r-xp 00004000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80030000-7f4d80032000 r--p 0000d000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80032000-7f4d80033000 ---p 0000f000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80033000-7f4d80034000 r--p 0000f000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80034000-7f4d80035000 rw-p 00010000 00:21 13839106                   /usr/lib64/libresolv.so.2
+7f4d80035000-7f4d80037000 rw-p 00000000 00:00 0 
+7f4d80037000-7f4d80038000 r--p 00000000 00:21 30870                      /usr/lib64/libnss_mdns4_minimal.so.2
+7f4d80038000-7f4d8003a000 r-xp 00001000 00:21 30870                      /usr/lib64/libnss_mdns4_minimal.so.2
+7f4d8003a000-7f4d8003b000 r--p 00003000 00:21 30870                      /usr/lib64/libnss_mdns4_minimal.so.2
+7f4d8003b000-7f4d8003c000 r--p 00003000 00:21 30870                      /usr/lib64/libnss_mdns4_minimal.so.2
+7f4d8003c000-7f4d8003d000 rw-p 00000000 00:00 0 
+7f4d8003d000-7f4d80041000 r--p 00000000 00:21 24671950                   /usr/lib64/libnss_myhostname.so.2
+7f4d80041000-7f4d80050000 r-xp 00004000 00:21 24671950                   /usr/lib64/libnss_myhostname.so.2
+7f4d80050000-7f4d8005a000 r--p 00013000 00:21 24671950                   /usr/lib64/libnss_myhostname.so.2
+7f4d8005a000-7f4d8005e000 r--p 0001c000 00:21 24671950                   /usr/lib64/libnss_myhostname.so.2
+7f4d8005e000-7f4d8005f000 rw-p 00020000 00:21 24671950                   /usr/lib64/libnss_myhostname.so.2
+7f4d8005f000-7f4d80060000 r--s 00000000 00:21 1984599                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-backports-compat23/2.4.4/db18ea377b154334e5323451835d329802222fa/groovy-backports-compat23-2.4.4.jar
+7f4d80060000-7f4d80062000 r--s 0000b000 00:21 1981920                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.github.jponge/lzma-java/1.3/a25db9d4d385ccda4825ae1b47a7a61d86e595af/lzma-java-1.3.jar
+7f4d80062000-7f4d80063000 r--s 00011000 00:21 1981909                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.github.abrarsyed.jastyle/jAstyle/1.3/42431e5834cfb184d60be4142e2806cf2d806ea/jAstyle-1.3.jar
+7f4d80063000-7f4d80064000 r--s 0000c000 00:21 1981906                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/com.cloudbees/diff4j/1.1/645329c0d4ebbea5f73758929c6e63bab9e77204/diff4j-1.1.jar
+7f4d80064000-7f4d80065000 r--s 00004000 00:21 1981903                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.3/c23708cdb9e80a144db433e23344a788a1fd6599/opencsv-2.3.jar
+7f4d80065000-7f4d8007b000 r--s 00101000 00:21 5343213                    /usr/java/jdk1.8.0_321-amd64/jre/lib/resources.jar
+7f4d8007b000-7f4d8007e000 ---p 00000000 00:00 0 
+7f4d8007e000-7f4d8017b000 rw-p 00000000 00:00 0 
+7f4d8017b000-7f4d8017e000 ---p 00000000 00:00 0 
+7f4d8017e000-7f4d8047b000 rw-p 00000000 00:00 0 
+7f4d8047b000-7f4d8067b000 rw-p 00000000 00:00 0 
+7f4d8067b000-7f4d8087b000 rw-p 00000000 00:00 0 
+7f4d8087b000-7f4d80a7b000 rw-p 00000000 00:00 0 
+7f4d80a7b000-7f4d80af4000 r--s 010f1000 00:21 5343961                    /usr/java/jdk1.8.0_321-amd64/lib/tools.jar
+7f4d80af4000-7f4d80af6000 r--s 0000a000 00:21 1984587                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/gradle.plugin.de.fuerstenau/BuildConfigPlugin/1.1.4/230df615e520397d354a46ef75320d0d0cb7d703/BuildConfigPlugin-1.1.4.jar
+7f4d80af6000-7f4d80af9000 r--s 0000e000 00:21 1981899                    /home/hedgegod/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixingradle/0.6-SNAPSHOT/dc941e5cae135871b054127e1ab3fd3eba6d05b5/mixingradle-0.6-SNAPSHOT.jar
+7f4d80af9000-7f4d80aff000 r--s 00041000 00:21 5343099                    /usr/java/jdk1.8.0_321-amd64/jre/lib/ext/sunjce_provider.jar
+7f4d80aff000-7f4d80b09000 r--s 0021b000 00:21 5343968                    /usr/java/jdk1.8.0_321-amd64/jre/lib/ext/localedata.jar
+7f4d80b09000-7f4d80b2c000 r--s 0038e000 00:21 5343091                    /usr/java/jdk1.8.0_321-amd64/jre/lib/ext/cldrdata.jar
+7f4d80b2c000-7f4d80b2e000 r--s 00009000 00:21 5343098                    /usr/java/jdk1.8.0_321-amd64/jre/lib/ext/sunec.jar
+7f4d80b2e000-7f4d80b31000 r--s 0001b000 00:21 5343143                    /usr/java/jdk1.8.0_321-amd64/jre/lib/jce.jar
+7f4d80b31000-7f4d80d31000 rw-p 00000000 00:00 0 
+7f4d80d31000-7f4d80d34000 ---p 00000000 00:00 0 
+7f4d80d34000-7f4d80e31000 rw-p 00000000 00:00 0 
+7f4d80e31000-7f4d80e34000 ---p 00000000 00:00 0 
+7f4d80e34000-7f4d81131000 rw-p 00000000 00:00 0 
+7f4d81131000-7f4d81134000 ---p 00000000 00:00 0 
+7f4d81134000-7f4d81231000 rw-p 00000000 00:00 0 
+7f4d81231000-7f4d81234000 ---p 00000000 00:00 0 
+7f4d81234000-7f4d81531000 rw-p 00000000 00:00 0 
+7f4d81531000-7f4d81534000 ---p 00000000 00:00 0 
+7f4d81534000-7f4d81631000 rw-p 00000000 00:00 0 
+7f4d81631000-7f4d81634000 ---p 00000000 00:00 0 
+7f4d81634000-7f4d81731000 rw-p 00000000 00:00 0 
+7f4d81731000-7f4d81734000 ---p 00000000 00:00 0 
+7f4d81734000-7f4d81831000 rw-p 00000000 00:00 0 
+7f4d81831000-7f4d81834000 ---p 00000000 00:00 0 
+7f4d81834000-7f4d81931000 rw-p 00000000 00:00 0 
+7f4d81931000-7f4d81934000 ---p 00000000 00:00 0 
+7f4d81934000-7f4d81a31000 rw-p 00000000 00:00 0 
+7f4d81a31000-7f4d81a34000 ---p 00000000 00:00 0 
+7f4d81a34000-7f4d81b31000 rw-p 00000000 00:00 0 
+7f4d81b31000-7f4d81b34000 ---p 00000000 00:00 0 
+7f4d81b34000-7f4d81c31000 rw-p 00000000 00:00 0 
+7f4d81c31000-7f4d81c38000 r--s 00000000 00:21 13878288                   /usr/lib64/gconv/gconv-modules.cache
+7f4d81c38000-7f4d81c3b000 ---p 00000000 00:00 0 
+7f4d81c3b000-7f4d81d38000 rw-p 00000000 00:00 0 
+7f4d81d38000-7f4d81d4a000 r--s 001c6000 00:21 5343966                    /usr/java/jdk1.8.0_321-amd64/jre/lib/jsse.jar
+7f4d81d4a000-7f4d81f4a000 rw-p 00000000 00:00 0 
+7f4d81f4a000-7f4d81f4d000 ---p 00000000 00:00 0 
+7f4d81f4d000-7f4d8204a000 rw-p 00000000 00:00 0 
+7f4d8204a000-7f4d82053000 r-xp 00000000 00:21 5342948                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libmanagement.so
+7f4d82053000-7f4d82252000 ---p 00009000 00:21 5342948                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libmanagement.so
+7f4d82252000-7f4d82253000 r--p 00008000 00:21 5342948                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libmanagement.so
+7f4d82253000-7f4d82254000 rw-p 00009000 00:21 5342948                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libmanagement.so
+7f4d82254000-7f4d82256000 r--s 00009000 00:21 1763694                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-tooling-api-builders-4.10.3.jar
+7f4d82256000-7f4d82258000 r--s 00003000 00:21 1763677                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-tooling-native-4.10.3.jar
+7f4d82258000-7f4d8225c000 r--s 00019000 00:21 1763679                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-testing-native-4.10.3.jar
+7f4d8225c000-7f4d8225e000 r--s 0000d000 00:21 1763787                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jcommander-1.47.jar
+7f4d8225e000-7f4d82267000 r--s 00089000 00:21 1763750                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/testng-6.3.1.jar
+7f4d82267000-7f4d8226c000 r--s 0005a000 00:21 1763754                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/bsh-2.0b6.jar
+7f4d8226c000-7f4d82270000 r--s 0001c000 00:21 1763699                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-testing-jvm-4.10.3.jar
+7f4d82270000-7f4d82272000 r--s 0000e000 00:21 1763785                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/junit-platform-commons-1.0.3.jar
+7f4d82272000-7f4d82273000 r--s 00001000 00:21 1763790                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/opentest4j-1.0.0.jar
+7f4d82273000-7f4d82276000 r--s 00013000 00:21 1763784                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/junit-platform-engine-1.0.3.jar
+7f4d82276000-7f4d82277000 r--s 00000000 00:21 1763786                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/apiguardian-api-1.0.0.jar
+7f4d82277000-7f4d82279000 r--s 0000c000 00:21 1763755                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/junit-platform-launcher-1.0.3.jar
+7f4d82279000-7f4d8227a000 r--s 00003000 00:21 1763698                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-testing-junit-platform-4.10.3.jar
+7f4d8227a000-7f4d82282000 r--s 00034000 00:21 1763706                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-testing-base-4.10.3.jar
+7f4d82282000-7f4d82289000 r--s 00043000 00:21 1763745                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/bcpg-jdk15on-1.58.jar
+7f4d82289000-7f4d8228c000 r--s 00010000 00:21 1763676                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-signing-4.10.3.jar
+7f4d8228c000-7f4d8228e000 r--s 00009000 00:21 1763685                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-scala-4.10.3.jar
+7f4d8228e000-7f4d8228f000 r--s 00004000 00:21 1763717                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-resources-sftp-4.10.3.jar
+7f4d8228f000-7f4d82298000 r--s 0005a000 00:21 1763720                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aws-java-sdk-kms-1.11.267.jar
+7f4d82298000-7f4d8229a000 r--s 00005000 00:21 1763760                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jmespath-java-1.11.267.jar
+7f4d8229a000-7f4d822ac000 r--s 000bb000 00:21 1763719                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aws-java-sdk-s3-1.11.267.jar
+7f4d822ac000-7f4d822b6000 r--s 00081000 00:21 1763781                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/ion-java-1.0.2.jar
+7f4d822b6000-7f4d822cb000 r--s 000bd000 00:21 1763721                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aws-java-sdk-core-1.11.267.jar
+7f4d822cb000-7f4d822cd000 r--s 00004000 00:21 1763713                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-resources-s3-4.10.3.jar
+7f4d822cd000-7f4d822dd000 r--s 00088000 00:21 1763764                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/joda-time-2.8.2.jar
+7f4d822dd000-7f4d822f0000 r--s 00136000 00:21 1763761                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jackson-databind-2.9.4.jar
+7f4d822f0000-7f4d822f3000 r--s 0000e000 00:21 1763763                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jackson-annotations-2.9.4.jar
+7f4d822f3000-7f4d822f7000 r--s 0004b000 00:21 1763762                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jackson-core-2.9.4.jar
+7f4d822f7000-7f4d822f8000 r--s 00001000 00:21 1763728                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/google-http-client-jackson2-1.23.0.jar
+7f4d822f8000-7f4d82301000 r--s 0004f000 00:21 1763729                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/google-http-client-1.23.0.jar
+7f4d82301000-7f4d82304000 r--s 0000d000 00:21 1763727                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/google-oauth-client-1.23.0.jar
+7f4d82304000-7f4d82309000 r--s 0002c000 00:21 1763726                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/google-api-client-1.23.0.jar
+7f4d82309000-7f4d8230d000 r--s 0001c000 00:21 1763725                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/google-api-services-storage-v1-rev116-1.23.0.jar
+7f4d8230d000-7f4d8230f000 r--s 00003000 00:21 1763714                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-resources-gcs-4.10.3.jar
+7f4d8230f000-7f4d82312000 r--s 0000f000 00:21 1763712                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-reporting-4.10.3.jar
+7f4d82312000-7f4d82314000 r--s 00007000 00:21 1763705                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-publish-4.10.3.jar
+7f4d82314000-7f4d82316000 r--s 00009000 00:21 1763736                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/commons-cli-1.2.jar
+7f4d82316000-7f4d8231c000 r--s 0003e000 00:21 1763693                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-plugins-4.10.3.jar
+7f4d8231c000-7f4d8231e000 r--s 0000b000 00:21 1763681                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-plugin-development-4.10.3.jar
+7f4d8231e000-7f4d82324000 r--s 00030000 00:21 1763688                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-platform-play-4.10.3.jar
+7f4d82324000-7f4d8232a000 r--s 00033000 00:21 1763751                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/snakeyaml-1.6.jar
+7f4d8232a000-7f4d8233b000 r--s 00075000 00:21 1763703                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-platform-native-4.10.3.jar
+7f4d8233b000-7f4d8233f000 r--s 0001b000 00:21 1763702                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-platform-jvm-4.10.3.jar
+7f4d8233f000-7f4d82346000 r--s 00029000 00:21 1763707                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-platform-base-4.10.3.jar
+7f4d82346000-7f4d82371000 r--s 00247000 00:21 1763737                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/biz.aQute.bndlib-3.4.0.jar
+7f4d82371000-7f4d82372000 r--s 00004000 00:21 1763675                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-osgi-4.10.3.jar
+7f4d82372000-7f4d82375000 r--s 0000c000 00:21 1763742                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/pmaven-groovy-0.8-20100325.jar
+7f4d82375000-7f4d82376000 r--s 00004000 00:21 1763741                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/pmaven-common-0.8-20100325.jar
+7f4d82376000-7f4d82377000 r--s 00007000 00:21 1763724                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/wagon-http-shared4-2.4.jar
+7f4d82377000-7f4d82378000 r--s 00002000 00:21 1763723                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/wagon-http-2.4.jar
+7f4d82378000-7f4d82379000 r--s 00002000 00:21 1763743                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/wagon-file-2.4.jar
+7f4d82379000-7f4d8237b000 r--s 00006000 00:21 1763744                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aether-connector-wagon-1.13.1.jar
+7f4d8237b000-7f4d82382000 r--s 0002d000 00:21 1763682                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-maven-4.10.3.jar
+7f4d82382000-7f4d82385000 r--s 0000b000 00:21 1763697                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-language-scala-4.10.3.jar
+7f4d82385000-7f4d82391000 r--s 0005d000 00:21 1763680                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-language-native-4.10.3.jar
+7f4d82391000-7f4d82393000 r--s 00005000 00:21 1763701                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-language-jvm-4.10.3.jar
+7f4d82393000-7f4d8239b000 r--s 0003e000 00:21 1763700                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-language-java-4.10.3.jar
+7f4d8239b000-7f4d8239d000 r--s 0000b000 00:21 1763696                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-language-groovy-4.10.3.jar
+7f4d8239d000-7f4d823a4000 r--s 00035000 00:21 1763748                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/simple-4.1.21.jar
+7f4d823a4000-7f4d823b0000 r--s 00100000 00:21 1763746                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/rhino-1.7R3.jar
+7f4d823b0000-7f4d823b4000 r--s 00012000 00:21 1763689                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-javascript-4.10.3.jar
+7f4d823b4000-7f4d823b8000 r--s 00010000 00:21 1763691                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-jacoco-4.10.3.jar
+7f4d823b8000-7f4d823bb000 r--s 00013000 00:21 1763690                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-ivy-4.10.3.jar
+7f4d823bb000-7f4d823bc000 r--s 00002000 00:21 1763683                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-ide-play-4.10.3.jar
+7f4d823bc000-7f4d823bd000 r--s 00011000 00:21 1763752                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/dd-plist-1.20.jar
+7f4d823bd000-7f4d823c4000 r--s 00032000 00:21 1763678                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-ide-native-4.10.3.jar
+7f4d823c4000-7f4d823ce000 r--s 0005c000 00:21 1763684                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-ide-4.10.3.jar
+7f4d823ce000-7f4d823d0000 r--s 00008000 00:21 1763687                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-ear-4.10.3.jar
+7f4d823d0000-7f4d823d2000 r--s 00005000 00:21 1763735                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jatl-0.2.2.jar
+7f4d823d2000-7f4d823d9000 r--s 0003d000 00:21 1763704                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-diagnostics-4.10.3.jar
+7f4d823d9000-7f4d823de000 r--s 00028000 00:21 1763674                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-code-quality-4.10.3.jar
+7f4d823de000-7f4d823e0000 r--s 0000b000 00:21 1763749                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-plugin-api-3.0.4.jar
+7f4d823e0000-7f4d823e2000 r--s 0000b000 00:21 1763771                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/wagon-provider-api-2.4.jar
+7f4d823e2000-7f4d823e8000 r--s 0003f000 00:21 1763739                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-compat-3.0.4.jar
+7f4d823e8000-7f4d823ec000 r--s 0001d000 00:21 1763733                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/xbean-reflect-3.4.jar
+7f4d823ec000-7f4d823ee000 r--s 00009000 00:21 1763783                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/hamcrest-core-1.3.jar
+7f4d823ee000-7f4d823f6000 r--s 00045000 00:21 1763753                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/junit-4.12.jar
+7f4d823f6000-7f4d823f8000 r--s 0000a000 00:21 1763772                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-classworlds-2.4.jar
+7f4d823f8000-7f4d823ff000 r--s 0002e000 00:21 1763732                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-container-default-1.5.5.jar
+7f4d823ff000-7f4d82405000 r--s 00026000 00:21 1763692                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-build-init-4.10.3.jar
+7f4d82405000-7f4d8240c000 r--s 0002d000 00:21 1763686                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-build-comparison-4.10.3.jar
+7f4d8240c000-7f4d8240d000 r--s 00002000 00:21 1763715                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-build-cache-http-4.10.3.jar
+7f4d8240d000-7f4d8240f000 r--s 00009000 00:21 1763673                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-antlr-4.10.3.jar
+7f4d8240f000-7f4d82411000 r--s 00004000 00:21 1763672                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-announce-4.10.3.jar
+7f4d82411000-7f4d82413000 r--s 00011000 00:21 1763593                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-kotlin-dsl-tooling-builders-1.0-rc-6.jar
+7f4d82413000-7f4d82415000 r--s 00005000 00:21 1763592                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-kotlin-dsl-provider-plugins-1.0-rc-6.jar
+7f4d82415000-7f4d82417000 r--s 0000c000 00:21 1763708                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-plugin-use-4.10.3.jar
+7f4d82417000-7f4d82418000 r--s 00000000 00:21 1763608                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-runtime-api-info-4.10.3.jar
+7f4d82418000-7f4d82431000 r--s 0013a000 00:21 1763758                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/xercesImpl-2.12.0.jar
+7f4d82431000-7f4d82434000 r--s 0001c000 00:21 1763757                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/nekohtml-1.9.20.jar
+7f4d82434000-7f4d8243a000 r--s 0005b000 00:21 1763756                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jcifs-1.3.17.jar
+7f4d8243a000-7f4d8243d000 r--s 0000d000 00:21 1763716                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-resources-http-4.10.3.jar
+7f4d8243d000-7f4d82442000 r--s 00040000 00:21 1763759                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/jsch-0.1.54.jar
+7f4d82442000-7f4d82465000 r--s 00223000 00:21 1763722                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/org.eclipse.jgit-4.5.3.201708160445-r.jar
+7f4d82465000-7f4d8246c000 r--s 00049000 00:21 1763782                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/httpcore-4.4.9.jar
+7f4d8246c000-7f4d82473000 r--s 0003f000 00:21 1763731                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/commons-codec-1.10.jar
+7f4d82473000-7f4d82481000 r--s 000ae000 00:21 1763730                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/httpclient-4.5.5.jar
+7f4d82481000-7f4d82483000 r--s 0000c000 00:21 1763709                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-version-control-4.10.3.jar
+7f4d82483000-7f4d82485000 r--s 0000d000 00:21 1763711                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-composite-builds-4.10.3.jar
+7f4d82485000-7f4d82486000 r--s 00000000 00:21 1763611                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-installation-beacon-4.10.3.jar
+7f4d82486000-7f4d82488000 r--s 00006000 00:21 1763779                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-repository-metadata-3.0.4.jar
+7f4d82488000-7f4d8248a000 r--s 0000c000 00:21 1763766                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-aether-provider-3.0.4.jar
+7f4d8248a000-7f4d8248e000 r--s 00021000 00:21 1763773                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-model-builder-3.0.4.jar
+7f4d8248e000-7f4d82490000 r--s 00026000 00:21 1763774                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-model-3.0.4.jar
+7f4d82490000-7f4d82492000 r--s 0000a000 00:21 1763777                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-settings-3.0.4.jar
+7f4d82492000-7f4d82494000 r--s 00002000 00:21 1763791                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-cipher-1.7.jar
+7f4d82494000-7f4d82495000 r--s 00006000 00:21 1763778                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-sec-dispatcher-1.3.jar
+7f4d82495000-7f4d82497000 r--s 0000d000 00:21 1763788                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-interpolation-1.14.jar
+7f4d82497000-7f4d8249a000 r--s 00008000 00:21 1763775                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-settings-builder-3.0.4.jar
+7f4d8249a000-7f4d82533000 r--p 00000000 00:21 3456815                    /usr/lib64/libstdc++.so.6.0.29
+7f4d82533000-7f4d82635000 r-xp 00099000 00:21 3456815                    /usr/lib64/libstdc++.so.6.0.29
+7f4d82635000-7f4d826a8000 r--p 0019b000 00:21 3456815                    /usr/lib64/libstdc++.so.6.0.29
+7f4d826a8000-7f4d826b5000 r--p 0020d000 00:21 3456815                    /usr/lib64/libstdc++.so.6.0.29
+7f4d826b5000-7f4d826b6000 rw-p 0021a000 00:21 3456815                    /usr/lib64/libstdc++.so.6.0.29
+7f4d826b6000-7f4d826b9000 rw-p 00000000 00:00 0 
+7f4d826b9000-7f4d826be000 r-xp 00000000 00:21 1982942                    /home/hedgegod/.gradle/native/25/linux-amd64/libnative-platform.so
+7f4d826be000-7f4d828bd000 ---p 00005000 00:21 1982942                    /home/hedgegod/.gradle/native/25/linux-amd64/libnative-platform.so
+7f4d828bd000-7f4d828be000 rw-p 00004000 00:21 1982942                    /home/hedgegod/.gradle/native/25/linux-amd64/libnative-platform.so
+7f4d828be000-7f4d828cf000 r-xp 00000000 00:21 5342951                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnio.so
+7f4d828cf000-7f4d82ace000 ---p 00011000 00:21 5342951                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnio.so
+7f4d82ace000-7f4d82acf000 r--p 00010000 00:21 5342951                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnio.so
+7f4d82acf000-7f4d82ad0000 rw-p 00011000 00:21 5342951                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnio.so
+7f4d82ad0000-7f4d90000000 r--p 00000000 00:21 13838322                   /usr/lib/locale/locale-archive
+7f4d90000000-7f4d90890000 rw-p 00000000 00:00 0 
+7f4d90890000-7f4d94000000 ---p 00000000 00:00 0 
+7f4d94000000-7f4d94423000 rw-p 00000000 00:00 0 
+7f4d94423000-7f4d98000000 ---p 00000000 00:00 0 
+7f4d98000000-7f4d98473000 rw-p 00000000 00:00 0 
+7f4d98473000-7f4d9c000000 ---p 00000000 00:00 0 
+7f4d9c000000-7f4d9c42e000 rw-p 00000000 00:00 0 
+7f4d9c42e000-7f4da0000000 ---p 00000000 00:00 0 
+7f4da0000000-7f4da087d000 rw-p 00000000 00:00 0 
+7f4da087d000-7f4da4000000 ---p 00000000 00:00 0 
+7f4da4000000-7f4da4002000 r--s 00000000 00:21 1763789                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-component-annotations-1.5.5.jar
+7f4da4002000-7f4da4006000 r--s 00035000 00:21 1763780                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/plexus-utils-3.0.8.jar
+7f4da4006000-7f4da4008000 r--s 0000b000 00:21 1763776                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-artifact-3.0.4.jar
+7f4da4008000-7f4da400b000 r--s 0001d000 00:21 1763767                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aether-impl-1.13.1.jar
+7f4da400b000-7f4da400f000 r--s 0001c000 00:21 1763769                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aether-util-1.13.1.jar
+7f4da400f000-7f4da401b000 r--s 0007d000 00:21 1763740                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/maven-core-3.0.4.jar
+7f4da401b000-7f4da406e000 r--s 00373000 00:21 1763765                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/bcprov-jdk15on-1.58.jar
+7f4da406e000-7f4da409e000 r--s 0018f000 00:21 1763710                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-dependency-management-4.10.3.jar
+7f4da409e000-7f4da40a1000 r--p 00000000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40a1000-7f4da40b3000 r-xp 00003000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40b3000-7f4da40b6000 r--p 00015000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40b6000-7f4da40b7000 ---p 00018000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40b7000-7f4da40b8000 r--p 00018000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40b8000-7f4da40b9000 rw-p 00019000 00:21 3456803                    /usr/lib64/libgcc_s-11-20220127.so.1
+7f4da40b9000-7f4da40ba000 r--s 00003000 00:21 1763768                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aether-spi-1.13.1.jar
+7f4da40ba000-7f4da40bd000 r--s 00013000 00:21 1763770                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/aether-api-1.13.1.jar
+7f4da40bd000-7f4da40cc000 r--s 000d9000 00:21 1763738                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/ivy-2.2.0.jar
+7f4da40cc000-7f4da40d1000 r--s 00034000 00:21 1763747                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gson-2.7.jar
+7f4da40d1000-7f4da40d3000 r--s 00012000 00:21 1763734                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/asm-util-6.2.jar
+7f4da40d3000-7f4da40d5000 r--s 0000e000 00:21 1763718                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/plugins/gradle-workers-4.10.3.jar
+7f4da40d5000-7f4da40eb000 r-xp 00000000 00:21 5342950                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnet.so
+7f4da40eb000-7f4da42ea000 ---p 00016000 00:21 5342950                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnet.so
+7f4da42ea000-7f4da42eb000 r--p 00015000 00:21 5342950                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnet.so
+7f4da42eb000-7f4da42ec000 rw-p 00016000 00:21 5342950                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libnet.so
+7f4da42ec000-7f4da42ee000 r--s 00006000 00:21 1763610                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-wrapper-4.10.3.jar
+7f4da42ee000-7f4da42fd000 r--s 0004b000 00:21 1763609                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-tooling-api-4.10.3.jar
+7f4da42fd000-7f4da42ff000 r--s 00002000 00:21 1763606                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-stdlib-jdk8-1.2.61.jar
+7f4da42ff000-7f4da4300000 r--s 00000000 00:21 1763605                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-stdlib-jdk7-1.2.61.jar
+7f4da4300000-7f4da4306000 r--s 00015000 00:21 1763604                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-stdlib-common-1.2.61.jar
+7f4da4306000-7f4da4316000 r--s 000db000 00:21 1763603                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-stdlib-1.2.61.jar
+7f4da4316000-7f4da4318000 r--s 00009000 00:21 1763602                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-script-runtime-1.2.61.jar
+7f4da4318000-7f4da4319000 r--s 00002000 00:21 1763601                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-sam-with-receiver-compiler-plugin-1.2.61.jar
+7f4da4319000-7f4da434e000 r--s 00241000 00:21 1763600                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-reflect-1.2.61.jar
+7f4da434e000-7f4da4519000 r--s 019b7000 00:21 1763595                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kotlin-compiler-embeddable-1.2.61.jar
+7f4da4519000-7f4da451b000 r--s 00000000 00:21 1763594                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-kotlin-dsl-tooling-models-1.0-rc-6.jar
+7f4da451b000-7f4da451d000 r--s 00003000 00:21 1763590                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/annotations-13.0.jar
+7f4da451d000-7f4da4531000 r--s 00109000 00:21 1763591                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-kotlin-dsl-1.0-rc-6.jar
+7f4da4531000-7f4da4535000 r--s 00013000 00:21 1763615                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-build-cache-4.10.3.jar
+7f4da4535000-7f4da453b000 r--s 00034000 00:21 1763616                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-persistent-cache-4.10.3.jar
+7f4da453b000-7f4da4540000 r--s 00015000 00:21 1763619                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-resources-4.10.3.jar
+7f4da4540000-7f4da4541000 r--s 00003000 00:21 1763626                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-build-option-4.10.3.jar
+7f4da4541000-7f4da4542000 r--s 00006000 00:21 1763627                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-cli-4.10.3.jar
+7f4da4542000-7f4da4544000 r--s 00004000 00:21 1763639                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/log4j-over-slf4j-1.7.16.jar
+7f4da4544000-7f4da4546000 r--s 00000000 00:21 1763638                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/jul-to-slf4j-1.7.16.jar
+7f4da4546000-7f4da4548000 r--s 00003000 00:21 1763637                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/jcl-over-slf4j-1.7.16.jar
+7f4da4548000-7f4da4550000 r--s 00035000 00:21 1763617                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-logging-4.10.3.jar
+7f4da4550000-7f4da455f000 r--s 00085000 00:21 1763622                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-model-core-4.10.3.jar
+7f4da455f000-7f4da4561000 r--s 00006000 00:21 1763623                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-base-services-groovy-4.10.3.jar
+7f4da4561000-7f4da4563000 r--s 00007000 00:21 1763621                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-model-groovy-4.10.3.jar
+7f4da4563000-7f4da4564000 r--s 00006000 00:21 1763628                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-docs-4.10.3.jar
+7f4da4564000-7f4da456d000 r--s 0002d000 00:21 1763651                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/xml-apis-1.4.01.jar
+7f4da456d000-7f4da456e000 r--s 00000000 00:21 1763647                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/javax.inject-1.jar
+7f4da456e000-7f4da45df000 r--s 00665000 00:21 1763645                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/groovy-all-2.4.15.jar
+7f4da45df000-7f4da45e9000 r--s 00078000 00:21 1763650                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/commons-compress-1.14.jar
+7f4da45e9000-7f4da45f6000 r--s 00083000 00:21 1763648                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/commons-collections-3.2.2.jar
+7f4da45f6000-7f4da45f7000 r--s 00007000 00:21 1763630                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/asm-analysis-6.2.jar
+7f4da45f7000-7f4da45f9000 r--s 0000b000 00:21 1763631                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/asm-tree-6.2.jar
+7f4da45f9000-7f4da45fb000 r--s 00012000 00:21 1763629                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/asm-commons-6.2.jar
+7f4da45fb000-7f4da45fc000 r--s 00004000 00:21 1763654                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-freebsd-amd64-libcpp-0.14.jar
+7f4da45fc000-7f4da45fd000 r--s 00004000 00:21 1763655                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-freebsd-amd64-libstdcpp-0.14.jar
+7f4da45fd000-7f4da45fe000 r--s 00004000 00:21 1763656                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-freebsd-i386-libcpp-0.14.jar
+7f4da45fe000-7f4da45ff000 r--s 00003000 00:21 1763657                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-freebsd-i386-libstdcpp-0.14.jar
+7f4da45ff000-7f4da4600000 r--s 00002000 00:21 1763658                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-amd64-0.14.jar
+7f4da4600000-7f4da4601000 r--s 00002000 00:21 1763659                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-i386-0.14.jar
+7f4da4601000-7f4da4603000 r--s 00002000 00:21 1763660                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-osx-amd64-0.14.jar
+7f4da4603000-7f4da4604000 r--s 00003000 00:21 1763661                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-osx-i386-0.14.jar
+7f4da4604000-7f4da4606000 r--s 0000b000 00:21 1763662                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-windows-amd64-0.14.jar
+7f4da4606000-7f4da4607000 r--s 0000b000 00:21 1763663                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-windows-i386-0.14.jar
+7f4da4607000-7f4da4608000 r--s 00001000 00:21 1763664                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-amd64-ncurses5-0.14.jar
+7f4da4608000-7f4da4609000 r--s 00001000 00:21 1763665                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-amd64-ncurses6-0.14.jar
+7f4da4609000-7f4da460a000 r--s 00001000 00:21 1763666                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-i386-ncurses5-0.14.jar
+7f4da460a000-7f4da460e000 r--s 00012000 00:21 1763649                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-0.14.jar
+7f4da460e000-7f4da4611000 r--s 00023000 00:21 1763652                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/jansi-1.14.jar
+7f4da4611000-7f4da4615000 r--s 0000c000 00:21 1763620                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-native-4.10.3.jar
+7f4da4615000-7f4da4617000 r--s 0000f000 00:21 1763633                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/reflectasm-1.07-shaded.jar
+7f4da4617000-7f4da4619000 r--s 00000000 00:21 1763668                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/minlog-1.2.jar
+7f4da4619000-7f4da461d000 r--s 00026000 00:21 1763632                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/kryo-2.20.jar
+7f4da461d000-7f4da4645000 r--s 001cf000 00:21 1763641                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/guava-jdk5-17.0.jar
+7f4da4645000-7f4da4664000 r--s 001d9000 00:21 1763646                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/ant-1.9.11.jar
+7f4da4664000-7f4da46aa000 r--s 00265000 00:21 1763612                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-core-4.10.3.jar
+7f4da46aa000-7f4da46ab000 ---p 00000000 00:00 0 
+7f4da46ab000-7f4da47ab000 rw-p 00000000 00:00 0 
+7f4da47ab000-7f4da47ae000 ---p 00000000 00:00 0 
+7f4da47ae000-7f4da48ab000 rw-p 00000000 00:00 0 
+7f4da48ab000-7f4da48ac000 ---p 00000000 00:00 0 
+7f4da48ac000-7f4da48af000 ---p 00000000 00:00 0 
+7f4da48af000-7f4da49ac000 rw-p 00000000 00:00 0 
+7f4da49ac000-7f4da49ad000 ---p 00000000 00:00 0 
+7f4da49ad000-7f4da49b0000 ---p 00000000 00:00 0 
+7f4da49b0000-7f4da4aad000 rw-p 00000000 00:00 0 
+7f4da4aad000-7f4da4aae000 ---p 00000000 00:00 0 
+7f4da4aae000-7f4da4ab1000 ---p 00000000 00:00 0 
+7f4da4ab1000-7f4da4bae000 rw-p 00000000 00:00 0 
+7f4da4bae000-7f4da4bb1000 ---p 00000000 00:00 0 
+7f4da4bb1000-7f4da4cae000 rw-p 00000000 00:00 0 
+7f4da4cae000-7f4da4cb1000 ---p 00000000 00:00 0 
+7f4da4cb1000-7f4da4dae000 rw-p 00000000 00:00 0 
+7f4da4dae000-7f4da4db1000 ---p 00000000 00:00 0 
+7f4da4db1000-7f4da4eae000 rw-p 00000000 00:00 0 
+7f4da4eae000-7f4da4eaf000 ---p 00000000 00:00 0 
+7f4da4eaf000-7f4da5e20000 rw-p 00000000 00:00 0 
+7f4da5e20000-7f4da6000000 r--s 03e4a000 00:21 5343965                    /usr/java/jdk1.8.0_321-amd64/jre/lib/rt.jar
+7f4da6000000-7f4dac000000 rw-p 00000000 00:00 0 
+7f4dac000000-7f4dac839000 rw-p 00000000 00:00 0 
+7f4dac839000-7f4db0000000 ---p 00000000 00:00 0 
+7f4db0000000-7f4db06bf000 rw-p 00000000 00:00 0 
+7f4db06bf000-7f4db4000000 ---p 00000000 00:00 0 
+7f4db4000000-7f4db4813000 rw-p 00000000 00:00 0 
+7f4db4813000-7f4db8000000 ---p 00000000 00:00 0 
+7f4db8000000-7f4db8001000 r--s 00001000 00:21 1763667                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/native-platform-linux-i386-ncurses6-0.14.jar
+7f4db8001000-7f4db8003000 r--s 00007000 00:21 1763669                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/objenesis-1.2.jar
+7f4db8003000-7f4db800a000 r--s 0002d000 00:21 1763624                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-messaging-4.10.3.jar
+7f4db800a000-7f4db800c000 r--s 00006000 00:21 1763618                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-process-services-4.10.3.jar
+7f4db800c000-7f4db800e000 r--s 00000000 00:21 1763613                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-jvm-services-4.10.3.jar
+7f4db800e000-7f4db8010000 r--s 00006000 00:21 1763642                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/jsr305-2.0.1.jar
+7f4db8010000-7f4db8011000 r--s 00000000 00:21 1763644                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/jcip-annotations-1.0.jar
+7f4db8011000-7f4db8014000 r--s 0001a000 00:21 1763643                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/fastutil-7.2.1-min.jar
+7f4db8014000-7f4db8018000 r--s 0002a000 00:21 1763635                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/commons-io-2.4.jar
+7f4db8018000-7f4db9000000 rw-p 00000000 00:00 0 
+7f4db9000000-7f4dbdfd0000 rwxp 00000000 00:00 0 
+7f4dbdfd0000-7f4dc8000000 ---p 00000000 00:00 0 
+7f4dc8000000-7f4dc98f9000 rw-p 00000000 00:00 0 
+7f4dc98f9000-7f4dcc000000 ---p 00000000 00:00 0 
+7f4dcc000000-7f4dcc002000 r--s 0001a000 00:21 1763634                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/asm-6.2.jar
+7f4dcc002000-7f4dcc003000 r--s 00009000 00:21 1763640                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/slf4j-api-1.7.16.jar
+7f4dcc003000-7f4dcc010000 r--s 00037000 00:21 1763614                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-core-api-4.10.3.jar
+7f4dcc010000-7f4dcc01c000 r--s 00064000 00:21 1763625                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-base-services-4.10.3.jar
+7f4dcc01c000-7f4dcc0fc000 rw-p 00000000 00:00 0 
+7f4dcc0fc000-7f4dcc0fd000 ---p 00000000 00:00 0 
+7f4dcc0fd000-7f4dcc1fd000 rw-p 00000000 00:00 0 
+7f4dcc1fd000-7f4dcc1fe000 ---p 00000000 00:00 0 
+7f4dcc1fe000-7f4dcc2fe000 rw-p 00000000 00:00 0 
+7f4dcc2fe000-7f4dcc2ff000 ---p 00000000 00:00 0 
+7f4dcc2ff000-7f4dcc3ff000 rw-p 00000000 00:00 0 
+7f4dcc3ff000-7f4dcc400000 ---p 00000000 00:00 0 
+7f4dcc400000-7f4dcc73e000 rw-p 00000000 00:00 0 
+7f4dcc73e000-7f4dcc900000 ---p 00000000 00:00 0 
+7f4dcc900000-7f4dccb3e000 rw-p 00000000 00:00 0 
+7f4dccb3e000-7f4dccd00000 ---p 00000000 00:00 0 
+7f4dccd00000-7f4dccf00000 rw-p 00000000 00:00 0 
+7f4dccf00000-7f4dcd041000 rw-p 00000000 00:00 0 
+7f4dcd041000-7f4dcd2c1000 ---p 00000000 00:00 0 
+7f4dcd2c1000-7f4dcd2dc000 r-xp 00000000 00:21 5342964                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libzip.so
+7f4dcd2dc000-7f4dcd4db000 ---p 0001b000 00:21 5342964                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libzip.so
+7f4dcd4db000-7f4dcd4dc000 r--p 0001a000 00:21 5342964                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libzip.so
+7f4dcd4dc000-7f4dcd4dd000 rw-p 0001b000 00:21 5342964                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libzip.so
+7f4dcd4dd000-7f4dcd509000 r-xp 00000000 00:21 5342931                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libjava.so
+7f4dcd509000-7f4dcd709000 ---p 0002c000 00:21 5342931                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libjava.so
+7f4dcd709000-7f4dcd70a000 r--p 0002c000 00:21 5342931                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libjava.so
+7f4dcd70a000-7f4dcd70c000 rw-p 0002d000 00:21 5342931                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libjava.so
+7f4dcd70c000-7f4dcd719000 r-xp 00000000 00:21 5342963                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libverify.so
+7f4dcd719000-7f4dcd918000 ---p 0000d000 00:21 5342963                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libverify.so
+7f4dcd918000-7f4dcd91a000 r--p 0000c000 00:21 5342963                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libverify.so
+7f4dcd91a000-7f4dcd91b000 rw-p 0000e000 00:21 5342963                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/libverify.so
+7f4dcd91b000-7f4dcd91c000 r--p 00000000 00:21 13839107                   /usr/lib64/librt.so.1
+7f4dcd91c000-7f4dcd91d000 r-xp 00001000 00:21 13839107                   /usr/lib64/librt.so.1
+7f4dcd91d000-7f4dcd91e000 r--p 00002000 00:21 13839107                   /usr/lib64/librt.so.1
+7f4dcd91e000-7f4dcd91f000 r--p 00002000 00:21 13839107                   /usr/lib64/librt.so.1
+7f4dcd91f000-7f4dcd920000 rw-p 00000000 00:00 0 
+7f4dcd920000-7f4dcd921000 ---p 00000000 00:00 0 
+7f4dcd921000-7f4dcd924000 ---p 00000000 00:00 0 
+7f4dcd924000-7f4dcda21000 rw-p 00000000 00:00 0 
+7f4dcda21000-7f4dcda30000 r--p 00000000 00:21 13839100                   /usr/lib64/libm.so.6
+7f4dcda30000-7f4dcdaa1000 r-xp 0000f000 00:21 13839100                   /usr/lib64/libm.so.6
+7f4dcdaa1000-7f4dcdafb000 r--p 00080000 00:21 13839100                   /usr/lib64/libm.so.6
+7f4dcdafb000-7f4dcdafc000 r--p 000d9000 00:21 13839100                   /usr/lib64/libm.so.6
+7f4dcdafc000-7f4dcdafd000 rw-p 000da000 00:21 13839100                   /usr/lib64/libm.so.6
+7f4dcdafd000-7f4dce7f5000 r-xp 00000000 00:21 5342968                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/server/libjvm.so
+7f4dce7f5000-7f4dce9f4000 ---p 00cf8000 00:21 5342968                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/server/libjvm.so
+7f4dce9f4000-7f4dcea8a000 r--p 00cf7000 00:21 5342968                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/server/libjvm.so
+7f4dcea8a000-7f4dceabb000 rw-p 00d8d000 00:21 5342968                    /usr/java/jdk1.8.0_321-amd64/jre/lib/amd64/server/libjvm.so
+7f4dceabb000-7f4dceaf8000 rw-p 00000000 00:00 0 
+7f4dceaf8000-7f4dceb24000 r--p 00000000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dceb24000-7f4dcec9a000 r-xp 0002c000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dcec9a000-7f4dcecee000 r--p 001a2000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dcecee000-7f4dcecef000 ---p 001f6000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dcecef000-7f4dcecf2000 r--p 001f6000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dcecf2000-7f4dcecf5000 rw-p 001f9000 00:21 13839097                   /usr/lib64/libc.so.6
+7f4dcecf5000-7f4dced02000 rw-p 00000000 00:00 0 
+7f4dced02000-7f4dced03000 r--p 00000000 00:21 13839099                   /usr/lib64/libdl.so.2
+7f4dced03000-7f4dced04000 r-xp 00001000 00:21 13839099                   /usr/lib64/libdl.so.2
+7f4dced04000-7f4dced05000 r--p 00002000 00:21 13839099                   /usr/lib64/libdl.so.2
+7f4dced05000-7f4dced06000 r--p 00002000 00:21 13839099                   /usr/lib64/libdl.so.2
+7f4dced06000-7f4dced07000 rw-p 00000000 00:00 0 
+7f4dced07000-7f4dced1e000 r-xp 00000000 00:21 5343288                    /usr/java/jdk1.8.0_321-amd64/lib/amd64/jli/libjli.so
+7f4dced1e000-7f4dcef1d000 ---p 00017000 00:21 5343288                    /usr/java/jdk1.8.0_321-amd64/lib/amd64/jli/libjli.so
+7f4dcef1d000-7f4dcef1e000 r--p 00016000 00:21 5343288                    /usr/java/jdk1.8.0_321-amd64/lib/amd64/jli/libjli.so
+7f4dcef1e000-7f4dcef1f000 rw-p 00017000 00:21 5343288                    /usr/java/jdk1.8.0_321-amd64/lib/amd64/jli/libjli.so
+7f4dcef1f000-7f4dcef20000 r--p 00000000 00:21 13839105                   /usr/lib64/libpthread.so.0
+7f4dcef20000-7f4dcef21000 r-xp 00001000 00:21 13839105                   /usr/lib64/libpthread.so.0
+7f4dcef21000-7f4dcef22000 r--p 00002000 00:21 13839105                   /usr/lib64/libpthread.so.0
+7f4dcef22000-7f4dcef23000 r--p 00002000 00:21 13839105                   /usr/lib64/libpthread.so.0
+7f4dcef23000-7f4dcef24000 rw-p 00000000 00:00 0 
+7f4dcef24000-7f4dcef29000 r--s 00041000 00:21 1763636                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/commons-lang-2.6.jar
+7f4dcef29000-7f4dcef2a000 r--s 00004000 00:21 1763653                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/ant-launcher-1.9.11.jar
+7f4dcef2a000-7f4dcef37000 r--s 00068000 00:21 1763607                    /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-launcher-4.10.3.jar
+7f4dcef37000-7f4dcef3f000 rw-s 00000000 00:28 1518                       /tmp/hsperfdata_hedgegod/25757
+7f4dcef3f000-7f4dcef42000 rw-p 00000000 00:00 0 
+7f4dcef42000-7f4dcef44000 r--p 00000000 00:21 13839093                   /usr/lib64/ld-linux-x86-64.so.2
+7f4dcef44000-7f4dcef6a000 r-xp 00002000 00:21 13839093                   /usr/lib64/ld-linux-x86-64.so.2
+7f4dcef6a000-7f4dcef75000 r--p 00028000 00:21 13839093                   /usr/lib64/ld-linux-x86-64.so.2
+7f4dcef75000-7f4dcef76000 ---p 00000000 00:00 0 
+7f4dcef76000-7f4dcef78000 r--p 00033000 00:21 13839093                   /usr/lib64/ld-linux-x86-64.so.2
+7f4dcef78000-7f4dcef7a000 rw-p 00035000 00:21 13839093                   /usr/lib64/ld-linux-x86-64.so.2
+7fffcf712000-7fffcf734000 rw-p 00000000 00:00 0                          [stack]
+7fffcf7cb000-7fffcf7cf000 r--p 00000000 00:00 0                          [vvar]
+7fffcf7cf000-7fffcf7d1000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx3G -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant 
+java_command: org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.10.3
+java_class_path (initial): /home/hedgegod/.sdkman/candidates/gradle/4.10.3/lib/gradle-launcher-4.10.3.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/gradle/bin:/home/hedgegod/.sdkman/candidates/kotlin/current/bin:/home/hedgegod/.sdkman/candidates/gradle/current/bin:/home/hedgegod/.local/bin:/home/hedgegod/bin:/usr/local/gradle/bin:/usr/condabin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin:/home/hedgegod/.local/share/coursier/bin:/home/hedgegod/.local/share/coursier/bin
+USERNAME=hedgegod
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xae0f50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xae0f50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xae0f50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x915110], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x915110], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xae0f50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x914fe0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x915600], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x915600], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x915600], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x915600], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Fedora release 35 (Thirty Five)
+
+uname:Linux 5.16.18-200.fc35.x86_64 #1 SMP PREEMPT Mon Mar 28 14:10:07 UTC 2022 x86_64
+libc:glibc 2.34 NPTL 2.34 
+rlimit: STACK 8192k, CORE infinity, NPROC 14510, NOFILE 1048576, AS infinity
+load average:2.44 1.79 1.65
+
+/proc/meminfo:
+MemTotal:        3810372 kB
+MemFree:          107672 kB
+MemAvailable:     174768 kB
+Buffers:              56 kB
+Cached:           458048 kB
+SwapCached:        73364 kB
+Active:           392700 kB
+Inactive:        1513252 kB
+Active(anon):     259256 kB
+Inactive(anon):  1396068 kB
+Active(file):     133444 kB
+Inactive(file):   117184 kB
+Unevictable:       25916 kB
+Mlocked:            5916 kB
+SwapTotal:      14050296 kB
+SwapFree:        9777396 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       1464080 kB
+Mapped:           104436 kB
+Shmem:            201996 kB
+KReclaimable:      77548 kB
+Slab:             240204 kB
+SReclaimable:      77548 kB
+SUnreclaim:       162656 kB
+KernelStack:       17136 kB
+PageTables:        46108 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    15955480 kB
+Committed_AS:   12261780 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      106524 kB
+VmallocChunk:          0 kB
+Percpu:             4160 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      807040 kB
+DirectMap2M:     3188736 kB
+DirectMap1G:     2097152 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 126 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz
+stepping	: 5
+microcode	: 0xa8
+cpu MHz		: 3400.000
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz
+stepping	: 5
+microcode	: 0xa8
+cpu MHz		: 3400.002
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz
+stepping	: 5
+microcode	: 0xa8
+cpu MHz		: 3400.000
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz
+stepping	: 5
+microcode	: 0xa8
+cpu MHz		: 3399.997
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3810372k(105944k free), swap 14050296k(9769208k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.321-b07) for linux-amd64 JRE (1.8.0_321-b07), built on Dec 15 2021 19:16:05 by "java_re" with gcc 7.3.0
+
+time: Thu Apr 14 20:22:30 2022
+timezone: MSK
+elapsed time: 9012.950511 seconds (0d 2h 30m 12s)
+

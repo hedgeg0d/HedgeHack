@@ -11,7 +11,7 @@ import net.minecraft.world.GameType;
 
 import java.util.UUID;
 
-@Hack.Registration(name = "Fake Player", description = "spawns a dripped out fake player", category = Hack.Category.MISC, priority = HackPriority.Lowest)
+@Hack.Registration(name = "dummy", description = "puts a jabroni", category = Hack.Category.MISC, priority = HackPriority.Lowest)
 public class FakePlayer extends Hack {
 
     final private ItemStack[] armour = new ItemStack[] {
@@ -28,7 +28,7 @@ public class FakePlayer extends Hack {
             return;
         }
 
-        EntityOtherPlayerMP clonedPlayer = new EntityOtherPlayerMP(mc.world, new GameProfile(UUID.fromString("dbc45ea7-e8bd-4a3e-8660-ac064ce58216"), "travis"));
+        EntityOtherPlayerMP clonedPlayer = new EntityOtherPlayerMP(mc.world, new GameProfile(UUID.fromString("dbc45ea7-e8bd-4a3e-8660-ac064ce58216"), "Housemaster"));
         clonedPlayer.copyLocationAndAnglesFrom(mc.player);
         clonedPlayer.rotationYawHead = mc.player.rotationYawHead;
         clonedPlayer.rotationYaw = mc.player.rotationYaw;

@@ -10,7 +10,7 @@ import me.travis.wurstplusthree.util.RenderUtil2D;
 import me.travis.wurstplusthree.util.elements.Colour;
 import me.travis.wurstplusthree.util.elements.Rainbow;
 
-@HudElement.Element(name = "CSGO Watermark", posX = 100, posY = 100)
+@HudElement.Element(name = "Watermark", posX = 100, posY = 100)
 public class HudCsgoWatermark extends HudElement {
     String text = "";
 
@@ -33,7 +33,7 @@ public class HudCsgoWatermark extends HudElement {
                 this.getX() + padding + this.getWidth(), this.getY() + padding + this.getHeight() - 1, 1, fill.hashCode(), outline.hashCode(), false);
         RenderUtil2D.drawHLineG(this.getX() - padding, this.getY() - padding,
                 (this.getX() + padding + this.getWidth()) - (this.getX() - padding), Rainbow.getColour().hashCode(), Rainbow.getFurtherColour(HudEditor.INSTANCE.welcomerOffset.getValue()).hashCode());
-        text = ChatFormatting.GOLD + "Wurst" + ChatFormatting.RESET + "plus";
+        text = ChatFormatting.GOLD + "HedgeHack" + ChatFormatting.RESET + "on top!";
         if (HudEditor.INSTANCE.welcomerName.getValue()) {
             text += " | " + mc.player.getName();
         }

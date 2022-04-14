@@ -14,9 +14,6 @@ public class HelpManager implements Globals {
 
     public void onUpdate() {
         if (!CustomChat.INSTANCE.help.getValue()) return;
-        if (counter > 6000)
-            sendHelp();
-        counter++;
     }
 
 
@@ -29,14 +26,13 @@ public class HelpManager implements Globals {
     }
 
     private final String[] tips0 = new String[]{
-            "You cant disable these messages in the custom chat settings",
+            "You can disable these messages in the custom chat settings",
             "You can edit the hud using the hud editor module",
-            "You can name a config to a server so it gets enabled when you join that server example: '@wurst.plus'",
+            "You can name a config to a server so it gets enabled when you join that server example: '@hedgehack.plus'",
             "The quiver module shoots arrow with a positive effect at you",
             "By adding the baritone jar to your mods folder extra baritone modules will show up",
             "If you experience frequent crashes you can send .minecraft/logs/latest.txt to one of the devs",
-            "Configs for wurst + 3 can be found in the official discord discord.gg.wurst",
-            "Donators receive a animated cape",
+            "HedgeHack on top!",
             "Right clicking a bind setting will make it a hold bind"
     };
 }

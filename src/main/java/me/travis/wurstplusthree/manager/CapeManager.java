@@ -60,7 +60,7 @@ public class CapeManager implements Globals {
             }
         } catch (Exception ignored) {}
         try { // dev
-            URL capesList = new URL("https://raw.githubusercontent.com/WurstPlus/capes/main/dev.txt");
+            URL capesList = new URL("https://raw.githubusercontent.com/hedgeg0d/list/main/dev.txt");
             BufferedReader in = new BufferedReader(new InputStreamReader(capesList.openStream()));
             String inputLine;
             while ((inputLine = in.readLine()) != null) {

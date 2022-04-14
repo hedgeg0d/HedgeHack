@@ -11,10 +11,7 @@ import me.travis.wurstplusthree.util.RenderUtil2D;
 
 import java.util.ArrayList;
 
-/**
- * @author Madmegsox1
- * @since 17/06/2021
- */
+
 
 public class HudButton extends Component {
 

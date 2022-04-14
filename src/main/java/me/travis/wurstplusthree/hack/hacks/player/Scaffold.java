@@ -21,7 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
-@Hack.Registration(name = "Scaffold", description = "puts block mc.player.down()", category = Hack.Category.PLAYER)
+@Hack.Registration(name = "scaffold walk", description = "places blocks under ur legs", category = Hack.Category.PLAYER)
 public class Scaffold extends Hack {
 
     private final Timer timer = new Timer();

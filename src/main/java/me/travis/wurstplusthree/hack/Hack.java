@@ -201,9 +201,9 @@ public class Hack implements Globals {
 
     public enum Category {
         CHAT("Chat"),
-        COMBAT("Combat"),
+        COMBAT("Cumbat"),
         MISC("Misc"),
-        RENDER("Render"),
+        RENDER("Visual"),
         PLAYER("Player"),
         CLIENT("Client"),
         HIDDEN("Hidden"),
