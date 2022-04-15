@@ -5,14 +5,11 @@
 Kill them all
 
 
-[CoC](CODE_OF_CONDUCT.md)
-
-
 ## Credits
 
-W+3 recode brought to u by 
-      -Hedgegod
-      -Bluecross
+W+3 recode brought to u by,<br/>
+-Hedgegod<br/>
+-Bluecross
 
 ## Why
 
